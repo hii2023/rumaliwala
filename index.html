@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-<title>Rumaliwala | Premium Rumali & Islamic Accessories</title>
-<meta name="description" content="Rumaliwala - Premium Rumali, Namazi, Burkha accessories, caps, masks and gloves. Order easily on WhatsApp. Retail and wholesale in Ahmedabad." />
+<title>Rumaliwala | Rumali & Islamic Accessories</title>
+<meta name="description" content="Rumaliwala - Rumali, Namazi, Burkha accessories, caps, masks and gloves. Order on WhatsApp. Ahmedabad." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root {
     --bg: #f6f2ea;
@@ -24,251 +24,263 @@
     --danger: #a83228;
     --radius: 14px;
     --radius-lg: 20px;
-    --shadow: 0 2px 10px rgba(33, 31, 27, 0.05);
-    --shadow-lg: 0 14px 40px rgba(33, 31, 27, 0.14);
+    --shadow: 0 2px 10px rgba(33,31,27,.05);
+    --shadow-lg: 0 14px 40px rgba(33,31,27,.16);
     --maxw: 1120px;
   }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html, body { margin: 0; padding: 0; }
-  body {
-    font-family: 'IBM Plex Sans', system-ui, sans-serif;
-    background: var(--bg); color: var(--ink);
-    line-height: 1.5; -webkit-font-smoothing: antialiased; padding-bottom: 88px;
-  }
-  h1,h2,h3,h4,.serif { font-family: 'Fraunces', Georgia, serif; font-weight: 500; }
+  body { font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.5; -webkit-font-smoothing: antialiased; padding-bottom: 88px; }
+  h1,h2,h3,h4 { font-weight: 600; letter-spacing: -0.3px; margin: 0; }
   button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
   img { max-width: 100%; display: block; }
   a { color: inherit; text-decoration: none; }
   svg { display: block; }
   .icon { width: 22px; height: 22px; }
+  input, textarea, select { font-family: inherit; }
 
-  /* Header */
-  header.top { position: sticky; top: 0; z-index: 40; background: rgba(246,242,234,.9); backdrop-filter: saturate(180%) blur(12px); border-bottom: 1px solid var(--line); }
-  .top-inner { max-width: var(--maxw); margin: 0 auto; padding: 11px 16px; display: flex; align-items: center; gap: 14px; }
-  .brand { display: flex; align-items: center; gap: 11px; cursor: pointer; flex-shrink: 0; }
+  header.top { position: sticky; top: 0; z-index: 40; background: rgba(246,242,234,.92); backdrop-filter: saturate(180%) blur(12px); border-bottom: 1px solid var(--line); }
+  .top-inner { max-width: var(--maxw); margin: 0 auto; padding: 11px 14px; display: flex; align-items: center; gap: 12px; }
+  .brand { display: flex; align-items: center; gap: 10px; cursor: pointer; flex-shrink: 0; }
   .brand .mark { width: 42px; height: 42px; border-radius: 11px; background: var(--accent); color: #fff; display: grid; place-items: center; }
   .brand .mark svg { width: 24px; height: 24px; }
-  .brand h1 { font-size: 20px; margin: 0; letter-spacing: -0.2px; line-height: 1; }
-  .brand p { font-size: 10.5px; margin: 2px 0 0; color: var(--ink-soft); letter-spacing: .5px; text-transform: uppercase; }
-  .brand .tag { display: block; }
+  .brand h1 { font-size: 19px; line-height: 1; }
+  .brand p { font-size: 10px; margin: 2px 0 0; color: var(--ink-soft); letter-spacing: .4px; text-transform: uppercase; }
   .search-wrap { flex: 1; position: relative; max-width: 460px; margin-left: auto; }
-  .search-wrap input { width: 100%; padding: 11px 14px 11px 42px; border: 1px solid var(--line-dark); border-radius: 30px; background: var(--surface); font-size: 14px; color: var(--ink); outline: none; transition: border-color .15s; }
+  .search-wrap input { width: 100%; padding: 11px 14px 11px 42px; border: 1px solid var(--line-dark); border-radius: 30px; background: var(--surface); font-size: 15px; color: var(--ink); outline: none; }
   .search-wrap input:focus { border-color: var(--accent); }
   .search-wrap .si { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--ink-soft); }
   .search-wrap .si svg { width: 19px; height: 19px; }
 
-  main { max-width: var(--maxw); margin: 0 auto; padding: 16px; }
+  main { max-width: var(--maxw); margin: 0 auto; padding: 14px; }
 
-  .section-head { display: flex; align-items: baseline; justify-content: space-between; margin: 30px 2px 15px; }
-  .section-head h3 { font-size: 21px; margin: 0; letter-spacing: -0.3px; }
-  .section-head a { font-size: 13px; color: var(--accent-2); font-weight: 600; }
+  .section-head { display: flex; align-items: center; gap: 8px; margin: 26px 2px 13px; }
+  .section-head svg { width: 20px; height: 20px; color: var(--gold); }
+  .section-head h3 { font-size: 19px; }
 
-  /* Hero */
-  .hero { position: relative; border-radius: var(--radius-lg); overflow: hidden; background: var(--accent); color: #f4efe4; padding: 40px 26px 34px; margin-top: 6px; }
-  .hero .pattern { position: absolute; inset: 0; opacity: .10; background-repeat: repeat; background-size: 52px 52px; }
-  .hero-content { position: relative; max-width: 30ch; }
-  .hero .eyebrow { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; font-weight: 600; }
-  .hero h2 { font-size: 34px; line-height: 1.08; margin: 0 0 12px; letter-spacing: -0.5px; color: #fbf7ee; font-weight: 500; }
-  .hero p { margin: 0 0 22px; opacity: .82; font-size: 14.5px; }
-  .hero-cta { display: inline-flex; align-items: center; gap: 8px; background: #fbf7ee; color: var(--accent); font-weight: 600; padding: 12px 22px; border-radius: 30px; font-size: 14px; }
-  .hero-cta svg { width: 17px; height: 17px; }
+  .hero { position: relative; border-radius: var(--radius-lg); overflow: hidden; background: var(--accent); color: #f4efe4; padding: 26px 22px; margin-top: 4px; }
+  .hero .pattern { position: absolute; inset: 0; opacity: .1; background-repeat: repeat; background-size: 50px 50px; }
+  .hero-content { position: relative; }
+  .hero h2 { font-size: 27px; line-height: 1.1; margin: 0 0 14px; color: #fbf7ee; }
+  .hero-cta { display: inline-flex; align-items: center; gap: 8px; background: #fbf7ee; color: var(--accent); font-weight: 600; padding: 12px 22px; border-radius: 30px; font-size: 15px; }
+  .hero-cta svg { width: 18px; height: 18px; }
 
-  /* Category grid */
-  .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 11px; }
-  .cat-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 8px 13px; text-align: center; transition: transform .12s, box-shadow .12s, border-color .12s; }
-  .cat-card:active { transform: scale(.96); }
+  .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .cat-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 6px 12px; text-align: center; transition: transform .12s, box-shadow .12s, border-color .12s; }
+  .cat-card:active { transform: scale(.95); }
   .cat-card:hover { box-shadow: var(--shadow); border-color: var(--line-dark); }
-  .cat-ic { width: 40px; height: 40px; margin: 0 auto 9px; color: var(--accent); display: grid; place-items: center; }
-  .cat-ic svg { width: 30px; height: 30px; stroke-width: 1.5; }
-  .cat-card .name { font-size: 12.5px; font-weight: 500; line-height: 1.25; }
+  .cat-ic { width: 46px; height: 46px; margin: 0 auto 8px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
+  .cat-ic svg { width: 28px; height: 28px; stroke-width: 1.6; }
+  .cat-card .name { font-size: 12.5px; font-weight: 500; line-height: 1.2; }
 
-  /* Product grid */
-  .prod-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .prod-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .prod-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; position: relative; display: flex; flex-direction: column; transition: box-shadow .15s, border-color .15s; }
   .prod-card:hover { box-shadow: var(--shadow); border-color: var(--line-dark); }
   .prod-thumb { aspect-ratio: 1/1; position: relative; cursor: pointer; overflow: hidden; background: var(--surface-2); }
   .prod-thumb img { width: 100%; height: 100%; object-fit: cover; }
   .prod-thumb .ph { position: absolute; inset: 0; display: grid; place-items: center; }
-  .prod-thumb .ph svg { width: 46px; height: 46px; stroke-width: 1.3; opacity: .55; }
-  .prod-badges { position: absolute; top: 9px; left: 9px; display: flex; flex-direction: column; gap: 5px; z-index: 2; }
-  .badge { font-size: 9.5px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; padding: 3px 8px; border-radius: 20px; color: #fff; }
+  .prod-thumb .ph svg { width: 44px; height: 44px; stroke-width: 1.3; opacity: .5; }
+  .prod-badges { position: absolute; top: 8px; left: 8px; display: flex; flex-direction: column; gap: 4px; z-index: 2; }
+  .badge { font-size: 10px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; padding: 3px 8px; border-radius: 20px; color: #fff; }
   .badge.new { background: var(--accent-2); }
   .badge.best { background: var(--gold); }
   .badge.off { background: var(--danger); }
-  .wish-btn { position: absolute; top: 8px; right: 8px; width: 33px; height: 33px; background: rgba(255,253,249,.92); border-radius: 50%; display: grid; place-items: center; color: var(--ink); box-shadow: var(--shadow); z-index: 2; }
-  .wish-btn svg { width: 17px; height: 17px; }
+  .wish-btn { position: absolute; top: 7px; right: 7px; width: 34px; height: 34px; background: rgba(255,253,249,.92); border-radius: 50%; display: grid; place-items: center; color: var(--ink); box-shadow: var(--shadow); z-index: 2; }
+  .wish-btn svg { width: 18px; height: 18px; }
   .wish-btn.on { color: var(--danger); }
-  .prod-body { padding: 12px 13px 14px; display: flex; flex-direction: column; gap: 3px; flex: 1; }
-  .prod-cat { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-soft); }
-  .prod-title { font-family: 'Fraunces', serif; font-size: 15.5px; font-weight: 500; line-height: 1.2; cursor: pointer; letter-spacing: -0.1px; }
+  .prod-body { padding: 10px 11px 12px; display: flex; flex-direction: column; gap: 3px; flex: 1; }
+  .prod-title { font-size: 14.5px; font-weight: 600; line-height: 1.2; cursor: pointer; }
   .prod-meta { font-size: 11.5px; color: var(--ink-soft); }
-  .prod-stars { font-size: 11px; color: var(--gold); letter-spacing: 1px; }
-  .prod-price-row { display: flex; align-items: baseline; gap: 7px; margin-top: 5px; }
-  .prod-price { font-size: 16.5px; font-weight: 700; }
+  .prod-price-row { display: flex; align-items: baseline; gap: 7px; margin-top: 4px; }
+  .prod-price { font-size: 18px; font-weight: 700; }
   .prod-mrp { font-size: 12px; color: var(--ink-soft); text-decoration: line-through; }
-  .add-btn { margin-top: 11px; border: 1px solid var(--accent); color: var(--accent); background: var(--surface); font-weight: 600; font-size: 13px; padding: 9px; border-radius: 9px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background .12s, color .12s; }
-  .add-btn svg { width: 16px; height: 16px; }
+  .add-btn { margin-top: 10px; border: 1.5px solid var(--accent); color: var(--accent); background: var(--surface); font-weight: 600; font-size: 14px; padding: 10px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background .12s, color .12s; }
+  .add-btn svg { width: 18px; height: 18px; }
   .add-btn:active, .add-btn:hover { background: var(--accent); color: #fff; }
   .add-btn.oos { border-color: var(--line-dark); color: var(--ink-soft); }
   .add-btn.oos:hover { background: var(--surface-2); color: var(--ink-soft); }
 
-  /* Chips */
   .chips { display: flex; gap: 8px; overflow-x: auto; padding: 4px 0 10px; scrollbar-width: none; }
   .chips::-webkit-scrollbar { display: none; }
-  .chip { white-space: nowrap; padding: 8px 15px; border-radius: 30px; border: 1px solid var(--line-dark); background: var(--surface); font-size: 13px; color: var(--ink-soft); transition: all .12s; }
-  .chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .chip { white-space: nowrap; padding: 9px 15px; border-radius: 30px; border: 1px solid var(--line-dark); background: var(--surface); font-size: 14px; color: var(--ink-soft); transition: all .12s; cursor: pointer; }
+  .chip.active, .chip.on { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-  /* Back / page head */
-  .back-bar { display: flex; align-items: center; gap: 10px; margin: 6px 0 2px; }
-  .back-btn { display: inline-flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 500; color: var(--accent-2); padding: 6px 0; }
-  .back-btn svg { width: 18px; height: 18px; }
-  .page-h { font-size: 26px; font-weight: 500; letter-spacing: -0.4px; margin: 6px 2px 2px; }
-  .page-sub { font-size: 13px; color: var(--ink-soft); margin: 0 2px 16px; }
+  .back-bar { display: flex; align-items: center; gap: 10px; margin: 4px 0 2px; }
+  .back-btn { display: inline-flex; align-items: center; gap: 5px; font-size: 15px; font-weight: 500; color: var(--accent-2); padding: 6px 0; }
+  .back-btn svg { width: 20px; height: 20px; }
+  .page-h { font-size: 23px; font-weight: 600; margin: 6px 2px 2px; }
+  .page-sub { font-size: 13px; color: var(--ink-soft); margin: 0 2px 14px; }
 
-  /* Sub-type list */
   .sub-list { display: flex; flex-direction: column; gap: 10px; }
-  .sub-row { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; transition: border-color .12s; }
+  .sub-row { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; }
   .sub-row:hover { border-color: var(--accent); }
-  .sub-row span.t { font-size: 15px; font-weight: 600; }
-  .sub-row svg { width: 18px; height: 18px; color: var(--accent-2); }
+  .sub-row span.t { font-size: 16px; font-weight: 600; }
+  .sub-row svg { width: 20px; height: 20px; color: var(--accent-2); }
 
-  /* Age grid */
   .age-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .age-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 8px; text-align: center; font-weight: 600; font-size: 15px; transition: all .12s; }
+  .age-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 8px; text-align: center; font-weight: 700; font-size: 18px; transition: all .12s; }
   .age-card:hover { border-color: var(--accent); color: var(--accent); }
   .age-card small { display: block; font-weight: 400; font-size: 11px; color: var(--ink-soft); margin-top: 2px; }
 
-  /* Product detail */
   .pd-gallery { border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); border: 1px solid var(--line); }
   .pd-main { aspect-ratio: 1/1; position: relative; background: var(--surface-2); }
   .pd-main img { width: 100%; height: 100%; object-fit: cover; }
   .pd-main .ph { position: absolute; inset: 0; display: grid; place-items: center; }
-  .pd-main .ph svg { width: 96px; height: 96px; stroke-width: 1.1; opacity: .5; }
-  .pd-info h2 { font-size: 27px; margin: 0 0 4px; letter-spacing: -0.4px; font-weight: 500; }
-  .pd-cat { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-soft); }
-  .pd-specs { margin: 16px 0; border-top: 1px solid var(--line); }
+  .pd-main .ph svg { width: 92px; height: 92px; stroke-width: 1.1; opacity: .5; }
+  .pd-info h2 { font-size: 24px; margin: 0 0 4px; }
+  .pd-specs { margin: 14px 0; border-top: 1px solid var(--line); }
   .pd-specs .row { display: flex; justify-content: space-between; padding: 11px 2px; border-bottom: 1px solid var(--line); font-size: 14px; }
   .pd-specs .row span:first-child { color: var(--ink-soft); }
   .colors { display: flex; gap: 9px; }
-  .color-dot { width: 27px; height: 27px; border-radius: 50%; border: 2px solid var(--line-dark); cursor: pointer; }
-  .qty-row { display: flex; align-items: center; gap: 16px; margin: 18px 0; }
-  .qty-ctrl { display: flex; align-items: center; border: 1px solid var(--line-dark); border-radius: 11px; overflow: hidden; }
-  .qty-ctrl button { width: 42px; height: 42px; font-size: 20px; color: var(--accent); }
-  .qty-ctrl span { width: 44px; text-align: center; font-weight: 600; }
+  .color-dot { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--line-dark); cursor: pointer; }
+  .qty-row { display: flex; align-items: center; gap: 16px; margin: 16px 0; }
+  .qty-ctrl { display: flex; align-items: center; border: 1px solid var(--line-dark); border-radius: 12px; overflow: hidden; }
+  .qty-ctrl button { width: 46px; height: 46px; display: grid; place-items: center; color: var(--accent); }
+  .qty-ctrl button svg { width: 20px; height: 20px; }
+  .qty-ctrl span { min-width: 40px; text-align: center; font-weight: 700; font-size: 17px; }
 
-  /* Buttons */
-  .btn-primary { background: var(--accent); color: #fff; font-weight: 600; font-size: 15px; padding: 14px; border-radius: 12px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background .12s; }
-  .btn-primary svg { width: 19px; height: 19px; }
+  .btn-primary { background: var(--accent); color: #fff; font-weight: 600; font-size: 16px; padding: 15px; border-radius: 12px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background .12s; }
+  .btn-primary svg { width: 20px; height: 20px; }
   .btn-primary:active { background: #0d271f; }
   .btn-primary:disabled { background: #a9b3ad; }
   .btn-wa { background: #1f8f4e; }
   .btn-wa:active { background: #187a41; }
+  .btn-danger { background: var(--danger); }
   .btn-outline { background: var(--surface); border: 1px solid var(--line-dark); color: var(--ink); font-weight: 600; font-size: 15px; padding: 13px; border-radius: 12px; width: 100%; display:flex; align-items:center; justify-content:center; gap:8px; }
   .btn-outline svg { width: 18px; height: 18px; }
-  .btn-sm { padding: 8px 12px; font-size: 13px; border-radius: 9px; width: auto; }
 
-  /* Cart */
-  .cart-item { display: flex; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; margin-bottom: 12px; }
-  .cart-thumb { width: 64px; height: 64px; border-radius: 10px; overflow: hidden; background: var(--surface-2); display: grid; place-items: center; flex-shrink: 0; }
+  .cart-item { display: flex; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 11px; margin-bottom: 11px; }
+  .cart-thumb { width: 66px; height: 66px; border-radius: 10px; overflow: hidden; background: var(--surface-2); display: grid; place-items: center; flex-shrink: 0; }
   .cart-thumb img { width: 100%; height: 100%; object-fit: cover; }
   .cart-thumb svg { width: 30px; height: 30px; opacity: .5; }
   .cart-info { flex: 1; min-width: 0; }
-  .cart-info h4 { margin: 0 0 2px; font-size: 15px; font-weight: 500; }
+  .cart-info h4 { margin: 0 0 2px; font-size: 15px; font-weight: 600; }
   .cart-info .m { font-size: 12px; color: var(--ink-soft); }
-  .cart-qc { display: flex; align-items: center; gap: 12px; margin-top: 9px; }
-  .cart-qc .qty-ctrl button { width: 30px; height: 30px; font-size: 17px; }
-  .cart-qc .qty-ctrl span { width: 32px; }
-  .cart-remove { font-size: 12.5px; color: var(--danger); font-weight: 500; }
-  .cart-line-price { font-weight: 700; font-size: 15px; text-align: right; white-space: nowrap; }
+  .cart-qc { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .cart-qc .qty-ctrl button { width: 34px; height: 34px; }
+  .cart-qc .qty-ctrl button svg { width: 17px; height: 17px; }
+  .cart-qc .qty-ctrl span { min-width: 30px; font-size: 15px; }
+  .cart-remove { color: var(--danger); display: grid; place-items: center; padding: 4px; }
+  .cart-remove svg { width: 19px; height: 19px; }
+  .cart-line-price { font-weight: 700; font-size: 16px; text-align: right; white-space: nowrap; }
 
   .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 8px 0 4px; }
-  .field { display: flex; flex-direction: column; gap: 5px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
   .field.full { grid-column: 1 / -1; }
-  .field label { font-size: 12.5px; font-weight: 500; color: var(--ink-soft); }
-  .field input, .field textarea, .field select { padding: 12px; border: 1px solid var(--line-dark); border-radius: 10px; font-size: 14px; font-family: inherit; background: var(--surface); color: var(--ink); outline: none; }
+  .field label { font-size: 13px; font-weight: 500; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; }
+  .field label svg { width: 16px; height: 16px; }
+  .field input, .field textarea, .field select { padding: 13px; border: 1px solid var(--line-dark); border-radius: 10px; font-size: 16px; background: var(--surface); color: var(--ink); outline: none; }
   .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--accent); }
   .field .err { border-color: var(--danger) !important; }
-  .field .cb { flex-direction: row; align-items: center; gap: 8px; }
 
-  .summary { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; margin: 16px 0; }
+  .summary { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 15px; margin: 15px 0; }
   .summary .row { display: flex; justify-content: space-between; font-size: 14px; padding: 5px 0; }
-  .summary .row.total { font-size: 19px; font-weight: 700; border-top: 1px solid var(--line); margin-top: 6px; padding-top: 12px; font-family: 'Fraunces', serif; }
+  .summary .row.total { font-size: 20px; font-weight: 700; border-top: 1px solid var(--line); margin-top: 6px; padding-top: 12px; }
 
-  .empty { text-align: center; padding: 60px 20px; color: var(--ink-soft); }
+  .empty { text-align: center; padding: 56px 20px; color: var(--ink-soft); }
   .empty svg { width: 54px; height: 54px; margin: 0 auto 14px; opacity: .4; stroke-width: 1.2; }
 
-  /* Floating buttons */
-  .fabs { position: fixed; right: 16px; bottom: 96px; z-index: 45; display: flex; flex-direction: column; gap: 12px; }
-  .fab { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; box-shadow: var(--shadow-lg); color: #fff; position: relative; }
-  .fab svg { width: 25px; height: 25px; }
+  .fabs { position: fixed; right: 15px; bottom: 96px; z-index: 45; display: flex; flex-direction: column; gap: 12px; }
+  .fab { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; box-shadow: var(--shadow-lg); color: #fff; }
+  .fab svg { width: 26px; height: 26px; }
   .fab.wa { background: #1f8f4e; }
   .fab.call { background: var(--accent); }
 
-  /* Bottom nav */
   .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 44; background: var(--surface); border-top: 1px solid var(--line); display: flex; justify-content: space-around; padding: 7px 0 max(7px, env(safe-area-inset-bottom)); }
   .bottom-nav button { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 10.5px; color: var(--ink-soft); flex: 1; position: relative; }
-  .bottom-nav button svg { width: 22px; height: 22px; }
+  .bottom-nav button svg { width: 23px; height: 23px; }
   .bottom-nav button.active { color: var(--accent); }
   .nav-badge { position: absolute; top: -3px; right: 50%; margin-right: -22px; background: var(--danger); color: #fff; font-size: 9px; font-weight: 700; min-width: 16px; height: 16px; border-radius: 8px; display: grid; place-items: center; padding: 0 4px; }
 
-  /* Toast */
-  .toast { position: fixed; left: 50%; bottom: 150px; transform: translateX(-50%) translateY(20px); background: var(--ink); color: #fff; padding: 11px 18px; border-radius: 30px; font-size: 13.5px; font-weight: 500; z-index: 60; opacity: 0; pointer-events: none; transition: all .25s; box-shadow: var(--shadow-lg); max-width: 90vw; text-align: center; }
+  .toast { position: fixed; left: 50%; bottom: 150px; transform: translateX(-50%) translateY(20px); background: var(--ink); color: #fff; padding: 12px 20px; border-radius: 30px; font-size: 14px; font-weight: 500; z-index: 60; opacity: 0; pointer-events: none; transition: all .25s; box-shadow: var(--shadow-lg); max-width: 90vw; text-align: center; }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-  /* Contact */
-  .contact-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 4px; }
-  .contact-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 8px; text-align: center; font-size: 12.5px; font-weight: 500; }
-  .contact-card svg { width: 24px; height: 24px; margin: 0 auto 7px; color: var(--accent); }
-  .site-footer { text-align: center; padding: 34px 16px 12px; color: var(--ink-soft); font-size: 12px; line-height: 1.7; }
-  .site-footer a { color: var(--ink-soft); border-bottom: 1px solid var(--line-dark); }
+  .contact-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 2px; }
+  .contact-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 15px 8px; text-align: center; font-size: 12.5px; font-weight: 500; }
+  .contact-card svg { width: 26px; height: 26px; margin: 0 auto 7px; color: var(--accent); }
+  .site-footer { text-align: center; padding: 30px 16px 12px; color: var(--ink-soft); font-size: 12px; }
+  .site-footer button { display: inline-flex; align-items: center; gap: 5px; color: var(--ink-soft); margin-top: 6px; }
+  .site-footer button svg { width: 15px; height: 15px; }
 
-  /* Wholesale */
-  .wholesale-hero { position: relative; overflow: hidden; background: var(--accent); color: #f4efe4; border-radius: var(--radius-lg); padding: 30px 22px; margin-bottom: 20px; }
-  .wholesale-hero .pattern { position: absolute; inset: 0; opacity: .1; background-size: 52px 52px; }
-  .wholesale-hero h2 { position: relative; margin: 0 0 6px; font-size: 24px; font-weight: 500; }
+  .wholesale-hero { position: relative; overflow: hidden; background: var(--accent); color: #f4efe4; border-radius: var(--radius-lg); padding: 26px 20px; margin-bottom: 18px; }
+  .wholesale-hero .pattern { position: absolute; inset: 0; opacity: .1; background-size: 50px 50px; }
+  .wholesale-hero h2 { position: relative; margin: 0 0 6px; font-size: 22px; }
   .wholesale-hero p { position: relative; margin: 0; opacity: .85; font-size: 14px; }
 
-  /* Loading skeleton */
-  .skel-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
-  .skel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); height: 250px; position: relative; overflow: hidden; }
+  .skel-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+  .skel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); height: 240px; position: relative; overflow: hidden; }
   .skel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(0,0,0,.03), transparent); transform: translateX(-100%); animation: sh 1.2s infinite; }
   @keyframes sh { 100% { transform: translateX(100%); } }
 
   /* Admin */
   .admin-wrap { max-width: 760px; margin: 0 auto; }
   .admin-login { max-width: 380px; margin: 40px auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 28px 24px; text-align: center; }
-  .admin-login svg { width: 40px; height: 40px; color: var(--accent); margin: 0 auto 12px; }
-  .admin-row { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 11px; margin-bottom: 10px; }
-  .admin-row .th { width: 48px; height: 48px; border-radius: 9px; overflow: hidden; background: var(--surface-2); display: grid; place-items: center; flex-shrink: 0; }
+  .admin-login .lk { width: 54px; height: 54px; border-radius: 14px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; margin: 0 auto 14px; }
+  .admin-login .lk svg { width: 28px; height: 28px; }
+  .admin-tabs { display: flex; gap: 8px; margin: 6px 0 16px; }
+  .admin-tabs button { flex: 1; padding: 11px; border-radius: 10px; border: 1px solid var(--line-dark); background: var(--surface); font-weight: 600; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 7px; color: var(--ink-soft); }
+  .admin-tabs button svg { width: 18px; height: 18px; }
+  .admin-tabs button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .admin-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 16px; }
+  .stat-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 8px; text-align: center; }
+  .stat-card .n { font-size: 26px; font-weight: 700; }
+  .stat-card .l { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .4px; }
+  .admin-row { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; margin-bottom: 9px; }
+  .admin-row .th { width: 50px; height: 50px; border-radius: 10px; overflow: hidden; background: var(--surface-2); display: grid; place-items: center; flex-shrink: 0; }
   .admin-row .th img { width: 100%; height: 100%; object-fit: cover; }
-  .admin-row .th svg { width: 24px; height: 24px; opacity: .5; }
+  .admin-row .th svg { width: 26px; height: 26px; opacity: .5; }
   .admin-row .meta { flex: 1; min-width: 0; }
-  .admin-row .meta h4 { margin: 0; font-size: 14px; font-weight: 600; font-family: inherit; }
-  .admin-row .meta p { margin: 1px 0 0; font-size: 12px; color: var(--ink-soft); }
+  .admin-row .meta h4 { margin: 0; font-size: 15px; font-weight: 600; }
+  .admin-row .meta p { margin: 2px 0 0; font-size: 12px; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
   .admin-row .acts { display: flex; gap: 6px; }
-  .admin-row .acts button { width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--line-dark); display: grid; place-items: center; color: var(--ink-soft); }
-  .admin-row .acts button svg { width: 16px; height: 16px; }
-  .admin-row .acts button.del:hover { border-color: var(--danger); color: var(--danger); }
-  .admin-row.inactive { opacity: .55; }
-  .pill-stat { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; padding: 2px 7px; border-radius: 12px; }
+  .admin-row .acts button { width: 38px; height: 38px; border-radius: 9px; border: 1px solid var(--line-dark); display: grid; place-items: center; color: var(--ink-soft); }
+  .admin-row .acts button svg { width: 17px; height: 17px; }
+  .admin-row .acts button.del:active { border-color: var(--danger); color: var(--danger); }
+  .admin-row.off { opacity: .55; }
+  .pill-stat { font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 2px 7px; border-radius: 12px; }
   .pill-stat.live { background: var(--accent-soft); color: var(--accent); }
   .pill-stat.hidden { background: #f0e9db; color: var(--ink-soft); }
   .pill-stat.oos { background: #f6e2df; color: var(--danger); }
-  .admin-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 18px; }
-  .stat-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; text-align: center; }
-  .stat-card .n { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 600; }
-  .stat-card .l { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .5px; }
+
+  /* Chip fields (admin form) */
+  .fld { margin-bottom: 18px; }
+  .fld > label { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .fld > label svg { width: 16px; height: 16px; color: var(--ink-soft); }
+  .chip-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip-ic { display: inline-flex; align-items: center; gap: 6px; }
+  .chip-ic svg { width: 17px; height: 17px; }
+  .swatch-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+  .swatch { width: 40px; height: 40px; border-radius: 10px; border: 2px solid var(--line-dark); position: relative; cursor: pointer; }
+  .swatch.on { border-color: var(--accent); }
+  .swatch.on::after { content: ""; position: absolute; inset: 0; display: block; }
+  .swatch .tick { position: absolute; inset: 0; display: grid; place-items: center; color: #fff; }
+  .swatch .tick svg { width: 18px; height: 18px; filter: drop-shadow(0 1px 2px rgba(0,0,0,.5)); }
+  .icon-pick { display: flex; flex-wrap: wrap; gap: 8px; }
+  .icon-pick button { width: 48px; height: 48px; border-radius: 12px; border: 1.5px solid var(--line-dark); display: grid; place-items: center; color: var(--ink); background: var(--surface); }
+  .icon-pick button svg { width: 24px; height: 24px; }
+  .icon-pick button.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+  .photo-tile { width: 100px; height: 100px; border-radius: 14px; border: 2px dashed var(--line-dark); overflow: hidden; background: var(--surface-2); display: grid; place-items: center; color: var(--ink-soft); position: relative; }
+  .photo-tile img { width: 100%; height: 100%; object-fit: cover; }
+  .photo-tile svg { width: 30px; height: 30px; opacity: .6; }
+  .toggle-row { display: flex; gap: 8px; }
+  .toggle-row .chip { flex: 1; text-align: center; justify-content: center; display: flex; }
+  .cat-manage-row { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 11px 12px; margin-bottom: 9px; }
+  .cat-manage-row .ci { width: 42px; height: 42px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
+  .cat-manage-row .ci svg { width: 24px; height: 24px; }
+  .cat-manage-row .nm { flex: 1; font-weight: 600; font-size: 15px; }
+  .cat-manage-row .cnt { font-size: 12px; color: var(--ink-soft); }
+  .cat-manage-row .del { width: 38px; height: 38px; border-radius: 9px; border: 1px solid var(--line-dark); display: grid; place-items: center; color: var(--ink-soft); }
+  .cat-manage-row .del svg { width: 17px; height: 17px; }
 
   @media (min-width: 720px) {
     .cat-grid { grid-template-columns: repeat(8, 1fr); }
     .prod-grid, .skel-grid { grid-template-columns: repeat(4, 1fr); }
     .age-grid { grid-template-columns: repeat(6, 1fr); }
     .pd-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
-    .pd-info { margin-top: 0; }
     body { padding-bottom: 20px; }
     .bottom-nav { display: none; }
     .fabs { bottom: 24px; }
-    .hero h2 { font-size: 40px; }
+    .hero h2 { font-size: 34px; }
   }
 </style>
 </head>
@@ -278,14 +290,11 @@
   <div class="top-inner">
     <div class="brand" onclick="go('home')">
       <div class="mark" id="brandMark"></div>
-      <div class="tag">
-        <h1>Rumaliwala</h1>
-        <p>Rumali &amp; Islamic Accessories</p>
-      </div>
+      <div><h1>Rumaliwala</h1><p>Rumali &amp; Accessories</p></div>
     </div>
     <div class="search-wrap">
       <span class="si" id="searchIcon"></span>
-      <input id="searchInput" type="search" placeholder="Search rumali, cap, age, colour..." oninput="onSearch(this.value)" />
+      <input id="searchInput" type="search" placeholder="Search..." oninput="onSearch(this.value)" />
     </div>
   </div>
 </header>
@@ -299,36 +308,26 @@
 
 <nav class="bottom-nav">
   <button id="navHome" onclick="go('home')" data-ic="home">Home</button>
-  <button id="navCats" onclick="go('categories')" data-ic="grid">Categories</button>
-  <button id="navWish" onclick="go('wishlist')" data-ic="heart">Wishlist</button>
+  <button id="navCats" onclick="go('categories')" data-ic="grid">Shop</button>
+  <button id="navWish" onclick="go('wishlist')" data-ic="heart">Saved</button>
   <button id="navCart" onclick="go('cart')" data-ic="cart">Cart<span class="nav-badge" id="navCartBadge" style="display:none">0</span></button>
 </nav>
 
 <div class="toast" id="toast"></div>
 
 <script>
-/* =========================================================
-   CONFIG  -  Store owner: edit business details here
-   ========================================================= */
+/* ============ CONFIG ============ */
 const CONFIG = {
   businessName: "Rumaliwala",
-  whatsapp: "919999999999",     // full format, no + or spaces. Replace with real number.
+  whatsapp: "919999999999",   // replace with real number
   callNumber: "919999999999",
   city: "Ahmedabad",
   mapsUrl: "https://maps.google.com/?q=Rumaliwala+Ahmedabad",
   currency: "₹",
-  deliveryNote: "Delivery charges confirmed on WhatsApp",
 };
+const SB = { url: "https://xoiksbtxoxrifkgvupqp.supabase.co", key: "sb_publishable_UwUNp74KFKUlbqQ7aY0s7Q_toy7kUiD" };
 
-/* Supabase (public read + passcode-gated admin writes) */
-const SB = {
-  url: "https://xoiksbtxoxrifkgvupqp.supabase.co",
-  key: "sb_publishable_UwUNp74KFKUlbqQ7aY0s7Q_toy7kUiD",
-};
-
-/* =========================================================
-   ICON SET  (clean line SVGs, no emoji)
-   ========================================================= */
+/* ============ ICONS ============ */
 const ICONS = {
   moon:'<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>',
   rumali:'<path d="M6 4c3.5 2.5 8.5 2.5 12 0"/><path d="M6 4v7c0 3.9 2.7 7 6 7s6-3.1 6-7V4"/><path d="M9 10c1.8 1.2 4.2 1.2 6 0"/>',
@@ -339,190 +338,153 @@ const ICONS = {
   cap:'<path d="M4 15c0-5 3.6-8.5 8-8.5s8 3.5 8 8.5"/><path d="M3 15h18"/><path d="M12 6.5V4"/>',
   namazi:'<path d="M12 3c2.6 1.8 4.2 4 4.2 6.8V21H7.8V9.8C7.8 7 9.4 4.8 12 3z"/><path d="M4 21V13c0-1.2 1-2.2 2.2-2.2M20 21v-8c0-1.2-1-2.2-2.2-2.2"/><path d="M3.5 21h17"/>',
   box:'<path d="M12 3l8 4v10l-8 4-8-4V7z"/><path d="M4 7l8 4 8-4"/><path d="M12 11v10"/>',
+  shirt:'<path d="M8 3l4 3 4-3 4 3-3 3v12H7V9L4 6z"/>',
+  ring:'<circle cx="12" cy="14" r="6"/><path d="M9 6l3-3 3 3-1.5 3h-3z"/>',
+  scarf:'<path d="M5 4h14v6a7 7 0 0 1-14 0z"/><path d="M9 16v4M15 16v4"/>',
   search:'<circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/>',
-  heart:'<path d="M12 20s-7-4.4-9.3-8.3C1 8.6 2.7 5 6.1 5c2 0 3.1 1.1 3.9 2.3C10.8 6.1 11.9 5 13.9 5c3.4 0 5.1 3.6 3.4 6.7C15 15.6 12 20 12 20z"/>',
   cart:'<circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/><path d="M2.5 4h2.2l2 12h11l2-8H6"/>',
   home:'<path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/>',
-  grid:'<rect x="4" y="4" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1"/>',
+  grid:'<rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/>',
+  heart:'<path d="M12 20s-7-4.4-9.3-8.3C1 8.6 2.7 5 6.1 5c2 0 3.1 1.1 3.9 2.3C10.8 6.1 11.9 5 13.9 5c3.4 0 5.1 3.6 3.4 6.7C15 15.6 12 20 12 20z"/>',
   phone:'<path d="M6 3c1 0 1.7.6 2 1.6l.8 2.6c.2.8 0 1.5-.6 2l-1.2 1c1 2 2.6 3.6 4.6 4.6l1-1.2c.5-.6 1.2-.8 2-.6l2.6.8c1 .3 1.6 1 1.6 2v2c0 1.2-1 2.2-2.2 2.1C9.7 21.6 2.4 14.3 2 5.2 1.9 4 2.8 3 4 3z"/>',
   whatsapp:'<path d="M12 3a9 9 0 0 0-7.7 13.7L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 8.3c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.6 1.6c.1.2.1.4-.1.6l-.5.6c-.1.2-.2.3 0 .6.3.6 1.3 1.7 2.3 2.1.3.2.5.1.6 0l.6-.7c.2-.2.3-.2.6-.1l1.5.7c.3.1.4.3.4.5 0 .9-.9 1.6-1.7 1.6-1.1 0-3.6-1-5.2-3.3-1-1.4-1.6-2.8-1.6-3.7 0-.3.1-.6.2-.8z"/>',
   plus:'<path d="M12 5v14M5 12h14"/>',
+  minus:'<path d="M5 12h14"/>',
   trash:'<path d="M5 7h14M10 7V5h4v2M6 7l1 13h10l1-13"/>',
   back:'<path d="M15 5l-7 7 7 7"/>',
   arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',
   share:'<circle cx="6" cy="12" r="2.3"/><circle cx="18" cy="6" r="2.3"/><circle cx="18" cy="18" r="2.3"/><path d="M8 11l8-4M8 13l8 4"/>',
   pin:'<path d="M12 21c4-4.5 7-7.6 7-11a7 7 0 0 0-14 0c0 3.4 3 6.5 7 11z"/><circle cx="12" cy="10" r="2.5"/>',
   lock:'<rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>',
-  eye:'<path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/>',
-  eyeoff:'<path d="M4 4l16 16"/><path d="M9.5 5.6A9.7 9.7 0 0 1 12 5.5c6.5 0 10 6.5 10 6.5a16 16 0 0 1-3 3.6M6 7.2A15.8 15.8 0 0 0 2 12s3.5 6.5 10 6.5a9.7 9.7 0 0 0 3-.5"/>',
   check:'<path d="M5 12l5 5 9-11"/>',
   bell:'<path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 19a2 2 0 0 0 4 0"/>',
+  star:'<path d="M12 3l2.6 5.6 6 .6-4.5 4 1.3 6L12 16.8 6.6 19.2l1.3-6-4.5-4 6-.6z"/>',
+  spark:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>',
+  pencil:'<path d="M4 20h4L18 10l-4-4L4 16z"/><path d="M13 7l4 4"/>',
+  image:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="M4 18l5-5 4 4 3-3 4 4"/>',
+  gear:'<circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/>',
+  tag:'<path d="M4 4h8l8 8-8 8-8-8z"/><circle cx="8" cy="8" r="1.4"/>',
+  price:'<path d="M3 12l9-9 9 9-9 9z"/><path d="M9 14h4a2 2 0 0 0 0-4h-2a2 2 0 0 1 0-4h4"/>',
+  rupee:'<path d="M7 5h10M7 9h10M15 5c0 4-3 6-8 6l7 8"/>',
+  layers:'<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',
+  x:'<path d="M6 6l12 12M18 6L6 18"/>',
+  eye:'<path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/>',
+  eyeoff:'<path d="M4 4l16 16"/><path d="M9.5 5.6A9.7 9.7 0 0 1 12 5.5c6.5 0 10 6.5 10 6.5a16 16 0 0 1-3 3.6M6 7.2A15.8 15.8 0 0 0 2 12s3.5 6.5 10 6.5a9.7 9.7 0 0 0 3-.5"/>',
 };
 function icon(name, cls){ return `<svg class="${cls||'icon'}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICONS[name]||''}</svg>`; }
 function iconFill(name, cls){ return `<svg class="${cls||'icon'}" viewBox="0 0 24 24" fill="currentColor" stroke="none">${ICONS[name]||''}</svg>`; }
-
-/* Islamic geometric pattern tile as a background data-URI */
 function patternURI(stroke){
   const s = stroke.replace('#','%23');
   const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'><g fill='none' stroke='${s}' stroke-width='1'><rect x='11' y='11' width='22' height='22'/><rect x='11' y='11' width='22' height='22' transform='rotate(45 22 22)'/></g></svg>`;
   return `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
 }
 
-/* =========================================================
-   CATEGORIES  (fixed set; icons map by id)
-   ========================================================= */
-const CATEGORIES = [
-  { id:"rumali",   name:"Rumali",            icon:"rumali" },
-  { id:"nose",     name:"Nose Piece",        icon:"nose" },
-  { id:"burkha",   name:"Burkha Accessories",icon:"burkha" },
-  { id:"gloves",   name:"Gloves",            icon:"gloves" },
-  { id:"mask",     name:"Mask",              icon:"mask" },
-  { id:"cap",      name:"Cap",               icon:"cap" },
-  { id:"namazi",   name:"Namazi",            icon:"namazi" },
-  { id:"wholesale",name:"Wholesale",         icon:"box" },
+/* Icon choices for category picker */
+const ICON_CHOICES = ["rumali","cap","namazi","nose","burkha","gloves","mask","scarf","ring","shirt","box","heart","bell","moon","pin","tag"];
+/* Colour palette for product form */
+const PALETTE = [
+  {n:"White",h:"#ffffff"},{n:"Black",h:"#1b2631"},{n:"Green",h:"#14352c"},
+  {n:"Maroon",h:"#7b241c"},{n:"Navy",h:"#1a5276"},{n:"Gold",h:"#a67c3d"},
+  {n:"Purple",h:"#6c3483"},{n:"Grey",h:"#5d6d7e"},{n:"Pink",h:"#f1948a"},
+  {n:"Sky",h:"#85c1e9"},{n:"Cream",h:"#f9e79f"},{n:"Brown",h:"#7e5109"},
 ];
-const catIcon = id => (CATEGORIES.find(c=>c.id===id)||{}).icon || "box";
-const catName = id => (CATEGORIES.find(c=>c.id===id)||{}).name || id;
+
+const DEFAULT_CATS = [
+  {id:"rumali",name:"Rumali",icon:"rumali"},{id:"nose",name:"Nose Piece",icon:"nose"},
+  {id:"burkha",name:"Burkha",icon:"burkha"},{id:"gloves",name:"Gloves",icon:"gloves"},
+  {id:"mask",name:"Mask",icon:"mask"},{id:"cap",name:"Cap",icon:"cap"},{id:"namazi",name:"Namazi",icon:"namazi"},
+];
+const WHOLESALE = { id:"wholesale", name:"Wholesale", icon:"box", special:true };
 
 const AGE_KIDS = ["2 Years","3 Years","4 Years","5 Years","6 Years","7 Years","8 Years","9 Years","10 Years","11 Years","12 Years"];
 const AGE_ADULT = ["12+ Years","Adult Free Size"];
+const AGE_ALL = ["Baby", ...AGE_KIDS, ...AGE_ADULT];
 
-/* Small offline fallback so the page never renders empty */
 const SEED = [
-  { id:"s1", cat:"rumali", sub:"Diamond Rumali", age:"6 Years", title:"Diamond Net Rumali", price:120, mrp:150, fabric:"Soft Cotton Net", colors:["#0f5a4a","#7b241c"], badge:"best", stars:5, stock:24, desc:"Fine diamond-net weave with a soft finish." },
-  { id:"s2", cat:"cap", sub:"Prayer Cap", age:"Adult Free Size", title:"Cotton Prayer Cap", price:60, mrp:80, fabric:"Cotton Knit", colors:["#ffffff","#14352c"], badge:"best", stars:5, stock:50, desc:"Breathable knit prayer cap." },
+  { id:"s1", cat:"rumali", sub:"Diamond Rumali", age:"6 Years", title:"Diamond Net Rumali", price:120, mrp:150, fabric:"Soft Cotton", colors:["#14352c","#7b241c"], badge:"best", stars:5, stock:24, desc:"" },
+  { id:"s2", cat:"cap", sub:"Prayer Cap", age:"Adult Free Size", title:"Cotton Prayer Cap", price:60, mrp:80, fabric:"Cotton", colors:["#ffffff","#14352c"], badge:"best", stars:5, stock:50, desc:"" },
 ];
 
-/* =========================================================
-   STATE
-   ========================================================= */
+/* ============ STATE ============ */
 const store = {
-  products: [],
-  loaded: false,
-  cart: load("rw_cart", []),
-  wishlist: load("rw_wish", []),
-  recent: load("rw_recent", []),
-  view: "home",
-  filterCat: null, filterSub: null, filterAge: null,
-  search: "", sort: "featured",
-  _detailId: null,
-  admin: { pass: sessionStorage.getItem("rw_pass") || null, editing: null },
+  products: [], categories: [], loaded: false,
+  cart: load("rw_cart", []), wishlist: load("rw_wish", []), recent: load("rw_recent", []),
+  view: "home", filterCat: null, filterSub: null, filterAge: null,
+  search: "", sort: "featured", _detailId: null,
+  admin: { pass: sessionStorage.getItem("rw_pass") || null, tab: "products", form: null, editing: null, catAdding: false, newCat: {name:"", icon:"box"} },
 };
 function load(k,d){ try { return JSON.parse(localStorage.getItem(k))||d; } catch(e){ return d; } }
 function save(k,v){ localStorage.setItem(k, JSON.stringify(v)); }
 function persist(){ save("rw_cart",store.cart); save("rw_wish",store.wishlist); save("rw_recent",store.recent); }
 
-/* =========================================================
-   SUPABASE
-   ========================================================= */
-async function sbGet(){
-  const r = await fetch(`${SB.url}/rest/v1/rw_products?select=*&order=sort_order.asc,created_at.asc`, {
-    headers: { apikey: SB.key, Authorization: "Bearer "+SB.key }
-  });
-  if (!r.ok) throw new Error("fetch failed");
-  return r.json();
-}
+/* ============ SUPABASE ============ */
+async function sbGet(path){ const r = await fetch(`${SB.url}/rest/v1/${path}`, { headers:{ apikey:SB.key, Authorization:"Bearer "+SB.key } }); if(!r.ok) throw new Error("fetch failed"); return r.json(); }
 async function sbRpc(fn, body){
-  const r = await fetch(`${SB.url}/rest/v1/rpc/${fn}`, {
-    method:"POST",
-    headers:{ apikey:SB.key, Authorization:"Bearer "+SB.key, "Content-Type":"application/json" },
-    body: JSON.stringify(body)
-  });
-  const text = await r.text();
-  if (!r.ok) throw new Error(text || "request failed");
+  const r = await fetch(`${SB.url}/rest/v1/rpc/${fn}`, { method:"POST", headers:{ apikey:SB.key, Authorization:"Bearer "+SB.key, "Content-Type":"application/json" }, body: JSON.stringify(body) });
+  const text = await r.text(); if(!r.ok) throw new Error(text || "request failed");
   try { return JSON.parse(text); } catch(e){ return text; }
 }
-function normalize(rows){
-  return rows.map(r => ({
-    id: r.id, cat: r.category, sub: r.subcategory||"", age: r.age||"",
-    title: r.title, price: Number(r.price), mrp: Number(r.mrp)||0,
-    fabric: r.fabric||"", colors: r.colors||[], image: r.image_url||"",
-    badge: r.badge||"", stars: r.rating||5, stock: r.stock||0,
-    featured: r.featured, active: r.active, desc: r.description||"",
-    sort_order: r.sort_order||0,
-  }));
-}
-async function loadProducts(){
+function normalize(rows){ return rows.map(r=>({ id:r.id, cat:r.category, sub:r.subcategory||"", age:r.age||"", title:r.title, price:Number(r.price), mrp:Number(r.mrp)||0, fabric:r.fabric||"", colors:r.colors||[], image:r.image_url||"", badge:r.badge||"", stars:r.rating||5, stock:r.stock||0, featured:r.featured, active:r.active, desc:r.description||"", sort_order:r.sort_order||0 })); }
+async function loadData(){
   try {
-    const rows = await sbGet();
-    store.products = normalize(rows);
+    const [prods, cats] = await Promise.all([ sbGet("rw_products?select=*&order=sort_order.asc,created_at.asc"), sbGet("rw_categories?select=*&order=sort_order.asc") ]);
+    store.products = normalize(prods);
+    store.categories = (cats||[]).filter(c=>c.active!==false);
+    if (!store.categories.length) store.categories = DEFAULT_CATS.slice();
     store.loaded = true;
   } catch(e){
     store.products = SEED.map(s=>({ ...s, active:true, image:"", featured:s.badge==='best' }));
+    store.categories = DEFAULT_CATS.slice();
     store.loaded = true;
-    toast("Offline mode - showing sample items");
+    toast("Offline - showing samples");
   }
 }
+async function reloadProducts(){ try { store.products = normalize(await sbGet("rw_products?select=*&order=sort_order.asc,created_at.asc")); } catch(e){} }
+async function reloadCategories(){ try { const c = await sbGet("rw_categories?select=*&order=sort_order.asc"); store.categories = (c||[]).filter(x=>x.active!==false); } catch(e){} }
 
-/* Storefront visible products (active + in catalog) */
 function shopProducts(){ return store.products.filter(p=>p.active); }
+const catOf = id => store.categories.find(c=>c.id===id) || (id==='wholesale'?WHOLESALE:null);
+const catIcon = id => (catOf(id)||{}).icon || "box";
+const catName = id => (catOf(id)||{}).name || id;
+function homeCats(){ return [...store.categories, WHOLESALE]; }
 
-/* =========================================================
-   HELPERS
-   ========================================================= */
-const money = n => CONFIG.currency + Number(n).toLocaleString('en-IN');
+/* ============ HELPERS ============ */
+const money = n => CONFIG.currency + Number(n||0).toLocaleString('en-IN');
 const byId = id => store.products.find(p=>p.id===id);
 function stars(n){ return "★".repeat(n) + "☆".repeat(5-n); }
 function subsFor(cat){ return [...new Set(shopProducts().filter(p=>p.cat===cat && p.sub).map(p=>p.sub))]; }
 function toast(msg){ const t=document.getElementById("toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove("show"),2000); }
-
-/* Product thumb: image if present, else geometric placeholder in product colour */
-function thumbHTML(p, big){
-  if (p.image) return `<img src="${p.image}" alt="${escapeHtml(p.title)}" loading="lazy" onerror="this.style.display='none'"/>`;
+function escapeHtml(s){ return String(s==null?"":s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+function thumbHTML(p){
+  if (p.image) return `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" loading="lazy" onerror="this.style.display='none'"/>`;
   const c = (p.colors && p.colors[0]) || "#14352c";
-  const bg = `background-color:${c}0f; background-image:${patternURI(c)}; background-position:center;`;
-  return `<div class="ph" style="${bg}; color:${c}">${icon(catIcon(p.cat), big?'':'')}</div>`;
+  return `<div class="ph" style="background-color:${c}0f; background-image:${patternURI(c)}; background-position:center; color:${c}">${icon(catIcon(p.cat),'')}</div>`;
 }
-function escapeHtml(s){ return String(s||"").replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 
-/* =========================================================
-   CART / WISHLIST
-   ========================================================= */
+/* ============ CART / WISHLIST ============ */
 function cartCount(){ return store.cart.reduce((s,i)=>s+i.qty,0); }
-function cartTotal(){ return store.cart.reduce((s,i)=>{ const p=byId(i.id); return s + (p?p.price*i.qty:0); },0); }
-function addToCart(id, qty=1){
-  const p = byId(id);
-  if (!p || p.stock<=0){ toast("Out of stock"); return; }
-  const ex = store.cart.find(i=>i.id===id);
-  if (ex) ex.qty += qty; else store.cart.push({ id, qty });
-  persist(); updateBadges(); toast(p.title+" added to cart");
-}
+function cartTotal(){ return store.cart.reduce((s,i)=>{ const p=byId(i.id); return s+(p?p.price*i.qty:0); },0); }
+function addToCart(id, qty=1){ const p=byId(id); if(!p||p.stock<=0){ toast("Out of stock"); return; } const ex=store.cart.find(i=>i.id===id); if(ex)ex.qty+=qty; else store.cart.push({id,qty}); persist(); updateBadges(); toast("Added to cart"); }
 function setQty(id, qty){ const it=store.cart.find(i=>i.id===id); if(!it)return; it.qty=qty; if(it.qty<=0) store.cart=store.cart.filter(i=>i.id!==id); persist(); updateBadges(); render(); }
 function removeFromCart(id){ store.cart=store.cart.filter(i=>i.id!==id); persist(); updateBadges(); render(); }
-function toggleWish(id){
-  if (store.wishlist.includes(id)){ store.wishlist=store.wishlist.filter(x=>x!==id); toast("Removed from wishlist"); }
-  else { store.wishlist.push(id); toast("Saved to wishlist"); }
-  persist(); render();
-}
+function toggleWish(id){ if(store.wishlist.includes(id)) store.wishlist=store.wishlist.filter(x=>x!==id); else store.wishlist.push(id); persist(); render(); }
 const isWished = id => store.wishlist.includes(id);
 function trackRecent(id){ store.recent=[id,...store.recent.filter(x=>x!==id)].slice(0,8); persist(); }
 
-/* =========================================================
-   NAV
-   ========================================================= */
+/* ============ NAV ============ */
 function go(view, opts={}){
-  store.view = view;
-  if (opts.cat!==undefined) store.filterCat=opts.cat;
-  if (opts.sub!==undefined) store.filterSub=opts.sub;
-  if (opts.age!==undefined) store.filterAge=opts.age;
-  if (view==="home"){ store.filterCat=store.filterSub=store.filterAge=null; store.search=""; const si=document.getElementById("searchInput"); if(si) si.value=""; }
-  if (view!=="admin" && location.hash==="#admin") history.replaceState(null,"",location.pathname);
+  store.view=view;
+  if(opts.cat!==undefined) store.filterCat=opts.cat;
+  if(opts.sub!==undefined) store.filterSub=opts.sub;
+  if(opts.age!==undefined) store.filterAge=opts.age;
+  if(view==="home"){ store.filterCat=store.filterSub=store.filterAge=null; store.search=""; const si=document.getElementById("searchInput"); if(si) si.value=""; }
+  if(view!=="admin" && location.hash==="#admin") history.replaceState(null,"",location.pathname);
   window.scrollTo(0,0); render();
 }
-function onSearch(v){
-  store.search=v.trim().toLowerCase();
-  if (store.search && store.view!=="search") store.view="search";
-  if (!store.search && store.view==="search") store.view="home";
-  render();
-}
-function matchesSearch(p){
-  if (!store.search) return true;
-  return [p.title,p.cat,p.sub,p.age,p.fabric,catName(p.cat),(p.colors||[]).join(" ")].join(" ").toLowerCase().includes(store.search);
-}
+function onSearch(v){ store.search=v.trim().toLowerCase(); if(store.search && store.view!=="search") store.view="search"; if(!store.search && store.view==="search") store.view="home"; render(); }
+function matchesSearch(p){ if(!store.search) return true; return [p.title,p.cat,p.sub,p.age,p.fabric,catName(p.cat),(p.colors||[]).join(" ")].join(" ").toLowerCase().includes(store.search); }
 
-/* =========================================================
-   RENDER
-   ========================================================= */
+/* ============ RENDER ============ */
 const app = document.getElementById("app");
 function render(){
   updateBadges();
@@ -545,151 +507,105 @@ function render(){
 }
 
 function productCard(p){
-  const oos = p.stock<=0;
-  const off = p.mrp>p.price ? Math.round((1-p.price/p.mrp)*100) : 0;
-  return `
-  <div class="prod-card">
-    <div class="prod-thumb" onclick="openDetail('${p.id}')">
-      ${thumbHTML(p)}
+  const oos=p.stock<=0, off=p.mrp>p.price?Math.round((1-p.price/p.mrp)*100):0;
+  return `<div class="prod-card">
+    <div class="prod-thumb" onclick="openDetail('${p.id}')">${thumbHTML(p)}
       <div class="prod-badges">
         ${p.badge==='new'?'<span class="badge new">New</span>':''}
-        ${p.badge==='best'?'<span class="badge best">Bestseller</span>':''}
-        ${off?`<span class="badge off">${off}% Off</span>`:''}
+        ${p.badge==='best'?'<span class="badge best">Top</span>':''}
+        ${off?`<span class="badge off">-${off}%</span>`:''}
       </div>
-      <button class="wish-btn ${isWished(p.id)?'on':''}" onclick="event.stopPropagation();toggleWish('${p.id}')">
-        ${isWished(p.id)?iconFill('heart'):icon('heart')}
-      </button>
+      <button class="wish-btn ${isWished(p.id)?'on':''}" onclick="event.stopPropagation();toggleWish('${p.id}')">${isWished(p.id)?iconFill('heart'):icon('heart')}</button>
     </div>
     <div class="prod-body">
-      <div class="prod-cat">${catName(p.cat)}</div>
       <div class="prod-title" onclick="openDetail('${p.id}')">${escapeHtml(p.title)}</div>
-      <div class="prod-meta">${p.age||''}</div>
-      <div class="prod-stars">${stars(p.stars)}</div>
-      <div class="prod-price-row">
-        <span class="prod-price">${money(p.price)}</span>
-        ${p.mrp>p.price?`<span class="prod-mrp">${money(p.mrp)}</span>`:''}
-      </div>
-      ${oos
-        ? `<button class="add-btn oos" onclick="notifyMe('${p.id}')">${icon('bell')} Notify me</button>`
-        : `<button class="add-btn" onclick="addToCart('${p.id}')">${icon('plus')} Add</button>`}
+      ${p.age?`<div class="prod-meta">${p.age}</div>`:''}
+      <div class="prod-price-row"><span class="prod-price">${money(p.price)}</span>${p.mrp>p.price?`<span class="prod-mrp">${money(p.mrp)}</span>`:''}</div>
+      ${oos?`<button class="add-btn oos" onclick="notifyMe('${p.id}')">${icon('bell')} Notify</button>`:`<button class="add-btn" onclick="addToCart('${p.id}')">${icon('plus')} Add</button>`}
     </div>
   </div>`;
 }
+function catCard(c){
+  return `<div class="cat-card" onclick="${c.special?"go('wholesale')":`openCategory('${c.id}')`}">
+    <div class="cat-ic">${icon(c.icon)}</div>
+    <div class="name">${escapeHtml(c.name)}</div>
+  </div>`;
+}
+function skeleton(){ return `<div class="hero" style="min-height:150px"></div><div class="section-head"><h3>Loading...</h3></div><div class="skel-grid">${Array(4).fill('<div class="skel"></div>').join("")}</div>`; }
 
 /* ---------- HOME ---------- */
 function viewHome(){
-  if (!store.loaded) return skeleton();
-  const list = shopProducts();
-  const best = list.filter(p=>p.badge==='best').slice(0,4);
-  const fresh = list.filter(p=>p.badge==='new').slice(0,4);
-  const recent = store.recent.map(byId).filter(p=>p&&p.active).slice(0,4);
-  const pat = patternURI("#f4efe4");
+  if(!store.loaded) return skeleton();
+  const list=shopProducts();
+  const best=list.filter(p=>p.badge==='best').slice(0,4);
+  const fresh=list.filter(p=>p.badge==='new').slice(0,4);
+  const recent=store.recent.map(byId).filter(p=>p&&p.active).slice(0,4);
   return `
-    <div class="hero">
-      <div class="pattern" style="background-image:${pat}"></div>
+    <div class="hero"><div class="pattern" style="background-image:${patternURI('#f4efe4')}"></div>
       <div class="hero-content">
-        <p class="eyebrow">Trusted in ${CONFIG.city}</p>
-        <h2>Premium Rumali, Namazi &amp; more</h2>
-        <p>Browse the catalogue, add to cart, and place your order in one tap on WhatsApp.</p>
-        <a class="hero-cta" onclick="go('categories')">Shop Categories ${icon('arrow')}</a>
-      </div>
-    </div>
-
-    <div class="section-head"><h3>Shop by Category</h3></div>
-    <div class="cat-grid">${CATEGORIES.map(catCard).join("")}</div>
-
-    ${best.length?`<div class="section-head"><h3>Bestsellers</h3></div><div class="prod-grid">${best.map(productCard).join("")}</div>`:''}
-    ${fresh.length?`<div class="section-head"><h3>Latest Arrivals</h3></div><div class="prod-grid">${fresh.map(productCard).join("")}</div>`:''}
-    ${recent.length?`<div class="section-head"><h3>Recently Viewed</h3></div><div class="prod-grid">${recent.map(productCard).join("")}</div>`:''}
-
-    <div class="section-head"><h3>Visit &amp; Contact</h3></div>
+        <h2>Rumali, Namazi &amp; more</h2>
+        <a class="hero-cta" onclick="go('categories')">Shop now ${icon('arrow')}</a>
+      </div></div>
+    <div class="section-head"><h3>Categories</h3></div>
+    <div class="cat-grid">${homeCats().map(catCard).join("")}</div>
+    ${best.length?`<div class="section-head">${icon('star')}<h3>Top Picks</h3></div><div class="prod-grid">${best.map(productCard).join("")}</div>`:''}
+    ${fresh.length?`<div class="section-head">${icon('spark')}<h3>New</h3></div><div class="prod-grid">${fresh.map(productCard).join("")}</div>`:''}
+    ${recent.length?`<div class="section-head">${icon('back')}<h3>Recently Seen</h3></div><div class="prod-grid">${recent.map(productCard).join("")}</div>`:''}
+    <div class="section-head">${icon('pin')}<h3>Contact</h3></div>
     <div class="contact-row">
       <a class="contact-card" href="https://wa.me/${CONFIG.whatsapp}" target="_blank">${icon('whatsapp')}WhatsApp</a>
-      <a class="contact-card" href="tel:+${CONFIG.callNumber}">${icon('phone')}Call Now</a>
-      <a class="contact-card" href="${CONFIG.mapsUrl}" target="_blank">${icon('pin')}Location</a>
+      <a class="contact-card" href="tel:+${CONFIG.callNumber}">${icon('phone')}Call</a>
+      <a class="contact-card" href="${CONFIG.mapsUrl}" target="_blank">${icon('pin')}Map</a>
     </div>
-
-    <div class="site-footer">
-      ${CONFIG.businessName} &middot; ${CONFIG.city}<br/>
-      ${CONFIG.deliveryNote}<br/>
-      <a onclick="openAdmin()">Store Admin</a>
+    <div class="site-footer">${CONFIG.businessName} &middot; ${CONFIG.city}<br/>
+      <button onclick="openAdmin()">${icon('gear')} Admin</button>
     </div>`;
 }
-function catCard(c){
-  return `<div class="cat-card" onclick="${c.id==='wholesale'?"go('wholesale')":`openCategory('${c.id}')`}">
-    <div class="cat-ic">${icon(c.icon)}</div>
-    <div class="name">${c.name}</div>
-  </div>`;
-}
-function skeleton(){ return `<div class="hero" style="min-height:180px"></div><div class="section-head"><h3>Loading catalogue...</h3></div><div class="skel-grid">${Array(4).fill('<div class="skel"></div>').join("")}</div>`; }
 
 /* ---------- CATEGORIES ---------- */
 function viewCategories(){
   return `<div class="back-bar"><a class="back-btn" onclick="go('home')">${icon('back')} Home</a></div>
-    <div class="page-h">All Categories</div>
-    <div class="page-sub">Tap a category to browse products</div>
-    <div class="cat-grid">${CATEGORIES.map(catCard).join("")}</div>`;
+    <div class="page-h">Shop</div>
+    <div class="cat-grid">${homeCats().map(catCard).join("")}</div>`;
 }
-
-/* ---------- CATEGORY (sub-type) ---------- */
 function openCategory(catId){ const subs=subsFor(catId); if(subs.length) go("category",{cat:catId,sub:null,age:null}); else go("products",{cat:catId,sub:null,age:null}); }
 function viewCategory(){
-  const subs = subsFor(store.filterCat);
+  const subs=subsFor(store.filterCat);
   return `<div class="back-bar"><a class="back-btn" onclick="go('home')">${icon('back')} Home</a></div>
-    <div class="page-h">${catName(store.filterCat)}</div>
-    <div class="page-sub">Select type</div>
-    <div class="sub-list">
-      ${subs.map(s=>`<div class="sub-row" onclick="openSub('${store.filterCat}',${JSON.stringify(s)})"><span class="t">${escapeHtml(s)}</span>${icon('arrow')}</div>`).join("")}
-    </div>`;
+    <div class="page-h">${escapeHtml(catName(store.filterCat))}</div>
+    <div class="page-sub">Choose type</div>
+    <div class="sub-list">${subs.map(s=>`<div class="sub-row" onclick='openSub("${store.filterCat}",${JSON.stringify(s)})'><span class="t">${escapeHtml(s)}</span>${icon('arrow')}</div>`).join("")}</div>`;
 }
-
-/* ---------- AGE ---------- */
 function openSub(catId, sub){
-  const rel = shopProducts().filter(p=>p.cat===catId && p.sub===sub);
-  const ageSet = [...new Set(rel.map(p=>p.age).filter(Boolean))];
-  const kidAges = ageSet.filter(a=>/year/i.test(a) && !/12\+/.test(a));
-  if (kidAges.length>1) go("age",{cat:catId,sub,age:null});
-  else go("products",{cat:catId,sub,age:null});
+  const rel=shopProducts().filter(p=>p.cat===catId && p.sub===sub);
+  const ageSet=[...new Set(rel.map(p=>p.age).filter(Boolean))];
+  const kidAges=ageSet.filter(a=>/year/i.test(a) && !/12\+/.test(a));
+  if(kidAges.length>1) go("age",{cat:catId,sub,age:null}); else go("products",{cat:catId,sub,age:null});
 }
 function viewAge(){
   const isWomen=/women/i.test(store.filterSub||"");
-  const list = isWomen ? AGE_ADULT : AGE_KIDS.concat(["Adult Free Size"]);
-  return `<div class="back-bar"><a class="back-btn" onclick="go('category',{cat:'${store.filterCat}'})">${icon('back')} ${catName(store.filterCat)}</a></div>
+  const list=isWomen?AGE_ADULT:AGE_KIDS.concat(["Adult Free Size"]);
+  return `<div class="back-bar"><a class="back-btn" onclick="go('category',{cat:'${store.filterCat}'})">${icon('back')} ${escapeHtml(catName(store.filterCat))}</a></div>
     <div class="page-h">${escapeHtml(store.filterSub||catName(store.filterCat))}</div>
-    <div class="page-sub">Select age / size</div>
-    <div class="age-grid">
-      ${list.map(a=>`<div class="age-card" onclick="go('products',{cat:'${store.filterCat}',sub:${JSON.stringify(store.filterSub||'')},age:${JSON.stringify(a)}})">${a.replace(' Years','')}<small>${/year/i.test(a)?'Years':''}</small></div>`).join("")}
-    </div>
-    <div style="margin-top:14px"><button class="btn-outline" onclick="go('products',{cat:'${store.filterCat}',sub:${JSON.stringify(store.filterSub||'')},age:null})">Show all sizes</button></div>`;
+    <div class="page-sub">Choose size</div>
+    <div class="age-grid">${list.map(a=>`<div class="age-card" onclick='go("products",{cat:"${store.filterCat}",sub:${JSON.stringify(store.filterSub||"")},age:${JSON.stringify(a)}})'>${a.replace(' Years','')}<small>${/year/i.test(a)?'yr':''}</small></div>`).join("")}</div>
+    <div style="margin-top:14px"><button class="btn-outline" onclick='go("products",{cat:"${store.filterCat}",sub:${JSON.stringify(store.filterSub||"")},age:null})'>Show all</button></div>`;
 }
 
 /* ---------- PRODUCTS ---------- */
 function filteredProducts(){
-  let list = shopProducts().filter(p=>{
-    if (store.filterCat && p.cat!==store.filterCat) return false;
-    if (store.filterSub && p.sub!==store.filterSub) return false;
-    if (store.filterAge && p.age!==store.filterAge) return false;
-    return true;
-  });
-  switch(store.sort){
-    case "low": list.sort((a,b)=>a.price-b.price); break;
-    case "high": list.sort((a,b)=>b.price-a.price); break;
-    case "new": list.sort((a,b)=>(b.badge==='new')-(a.badge==='new')); break;
-    case "popular": list.sort((a,b)=>b.stars-a.stars); break;
-  }
+  let list=shopProducts().filter(p=>{ if(store.filterCat&&p.cat!==store.filterCat)return false; if(store.filterSub&&p.sub!==store.filterSub)return false; if(store.filterAge&&p.age!==store.filterAge)return false; return true; });
+  switch(store.sort){ case "low":list.sort((a,b)=>a.price-b.price);break; case "high":list.sort((a,b)=>b.price-a.price);break; case "new":list.sort((a,b)=>(b.badge==='new')-(a.badge==='new'));break; case "popular":list.sort((a,b)=>b.stars-a.stars);break; }
   return list;
 }
 function viewProducts(){
-  const list = filteredProducts();
-  const backTo = subsFor(store.filterCat).length ? `go('category',{cat:'${store.filterCat}'})` : "go('home')";
-  const crumb = [catName(store.filterCat), store.filterSub, store.filterAge].filter(Boolean).join(" · ");
+  const list=filteredProducts();
+  const backTo=subsFor(store.filterCat).length?`go('category',{cat:'${store.filterCat}'})`:"go('home')";
   return `<div class="back-bar"><a class="back-btn" onclick="${backTo}">${icon('back')} Back</a></div>
-    <div class="page-h">${catName(store.filterCat)}</div>
-    <div class="page-sub">${crumb||'All products'} · ${list.length} item${list.length!==1?'s':''}</div>
-    <div class="chips">
-      ${['featured:Featured','low:Price low','high:Price high','new:Newest','popular:Popular'].map(o=>{const[v,l]=o.split(':');return `<div class="chip ${store.sort===v?'active':''}" onclick="setSort('${v}')">${l}</div>`;}).join("")}
-    </div>
-    ${list.length?`<div class="prod-grid">${list.map(productCard).join("")}</div>`:`<div class="empty">${icon('search','')}No products in this selection yet.</div>`}`;
+    <div class="page-h">${escapeHtml(catName(store.filterCat))}</div>
+    <div class="page-sub">${[store.filterSub,store.filterAge].filter(Boolean).join(' · ')||'All'} · ${list.length}</div>
+    <div class="chips">${['featured:Top','low:₹ Low','high:₹ High','new:New','popular:Popular'].map(o=>{const[v,l]=o.split(':');return `<div class="chip ${store.sort===v?'active':''}" onclick="setSort('${v}')">${l}</div>`;}).join("")}</div>
+    ${list.length?`<div class="prod-grid">${list.map(productCard).join("")}</div>`:`<div class="empty">${icon('search','')}Nothing here yet.</div>`}`;
 }
 function setSort(s){ store.sort=s; render(); }
 
@@ -697,294 +613,319 @@ function setSort(s){ store.sort=s; render(); }
 let pdQty=1, pdColor=0;
 function openDetail(id){ trackRecent(id); pdQty=1; pdColor=0; store._detailId=id; go("detail"); }
 function viewDetail(){
-  const p = byId(store._detailId);
-  if (!p) return viewHome();
-  const oos = p.stock<=0;
-  return `<div class="back-bar"><a class="back-btn" onclick="go('products',{cat:'${p.cat}'})">${icon('back')} ${catName(p.cat)}</a></div>
+  const p=byId(store._detailId); if(!p) return viewHome();
+  const oos=p.stock<=0;
+  return `<div class="back-bar"><a class="back-btn" onclick="go('products',{cat:'${p.cat}'})">${icon('back')} ${escapeHtml(catName(p.cat))}</a></div>
     <div class="pd-wrap">
-      <div class="pd-gallery"><div class="pd-main">${thumbHTML(p,true)}</div></div>
+      <div class="pd-gallery"><div class="pd-main">${thumbHTML(p)}</div></div>
       <div class="pd-info">
-        ${p.badge==='best'?'<span class="badge best" style="display:inline-block;margin-bottom:10px">Bestseller</span>':''}
-        ${p.badge==='new'?'<span class="badge new" style="display:inline-block;margin-bottom:10px">New Arrival</span>':''}
-        <div class="pd-cat">${catName(p.cat)}</div>
+        ${p.badge==='best'?'<span class="badge best" style="display:inline-block;margin-bottom:8px">Top Pick</span>':''}
+        ${p.badge==='new'?'<span class="badge new" style="display:inline-block;margin-bottom:8px">New</span>':''}
         <h2>${escapeHtml(p.title)}</h2>
-        <div class="prod-stars" style="font-size:14px">${stars(p.stars)} <span style="color:var(--ink-soft);font-size:12px">(${p.stars}.0)</span></div>
-        <div class="prod-price-row" style="margin-top:10px">
-          <span class="prod-price" style="font-size:25px">${money(p.price)}</span>
-          ${p.mrp>p.price?`<span class="prod-mrp" style="font-size:15px">${money(p.mrp)}</span><span class="badge off">${Math.round((1-p.price/p.mrp)*100)}% off</span>`:''}
-        </div>
+        <div style="color:var(--gold);font-size:14px">${stars(p.stars)}</div>
+        <div class="prod-price-row" style="margin-top:10px"><span class="prod-price" style="font-size:26px">${money(p.price)}</span>${p.mrp>p.price?`<span class="prod-mrp" style="font-size:15px">${money(p.mrp)}</span><span class="badge off">-${Math.round((1-p.price/p.mrp)*100)}%</span>`:''}</div>
         <div class="pd-specs">
-          <div class="row"><span>Category</span><span>${catName(p.cat)}</span></div>
           ${p.sub?`<div class="row"><span>Type</span><span>${escapeHtml(p.sub)}</span></div>`:''}
-          ${p.age?`<div class="row"><span>Age / Size</span><span>${p.age}</span></div>`:''}
+          ${p.age?`<div class="row"><span>Size</span><span>${p.age}</span></div>`:''}
           ${p.fabric?`<div class="row"><span>Fabric</span><span>${escapeHtml(p.fabric)}</span></div>`:''}
-          <div class="row"><span>Availability</span><span style="color:${oos?'var(--danger)':'var(--accent-2)'};font-weight:600">${oos?'Out of stock':'In stock'}</span></div>
+          <div class="row"><span>Stock</span><span style="color:${oos?'var(--danger)':'var(--accent-2)'};font-weight:600">${oos?'Out':'Available'}</span></div>
         </div>
-        ${(p.colors&&p.colors.length)?`<div style="font-size:13px;color:var(--ink-soft);margin-bottom:8px">Available colours</div>
-        <div class="colors">${p.colors.map((c,i)=>`<div class="color-dot" style="background:${c};${i===pdColor?'border-color:var(--accent)':''}" onclick="pdColor=${i};render()"></div>`).join("")}</div>`:''}
-        <p style="font-size:14px;color:var(--ink-soft);margin:16px 0">${escapeHtml(p.desc)}</p>
-        ${oos?`<button class="btn-primary" onclick="notifyMe('${p.id}')">${icon('bell')} Notify me when available</button>`
-          :`<div class="qty-row"><span style="font-weight:600;font-size:14px">Quantity</span>
-            <div class="qty-ctrl"><button onclick="pdQty=Math.max(1,pdQty-1);render()">−</button><span>${pdQty}</span><button onclick="pdQty++;render()">+</button></div></div>
-            <button class="btn-primary" onclick="addToCart('${p.id}',${pdQty})">${icon('cart')} Add ${pdQty} to Cart</button>`}
+        ${(p.colors&&p.colors.length)?`<div class="colors" style="margin-bottom:16px">${p.colors.map((c,i)=>`<div class="color-dot" style="background:${c};${i===pdColor?'border-color:var(--accent)':''}" onclick="pdColor=${i};render()"></div>`).join("")}</div>`:''}
+        ${p.desc?`<p style="font-size:14px;color:var(--ink-soft);margin:0 0 16px">${escapeHtml(p.desc)}</p>`:''}
+        ${oos?`<button class="btn-primary" onclick="notifyMe('${p.id}')">${icon('bell')} Notify me</button>`
+          :`<div class="qty-row"><span style="font-weight:600">Qty</span><div class="qty-ctrl"><button onclick="pdQty=Math.max(1,pdQty-1);render()">${icon('minus')}</button><span>${pdQty}</span><button onclick="pdQty++;render()">${icon('plus')}</button></div></div>
+            <button class="btn-primary" onclick="addToCart('${p.id}',${pdQty})">${icon('cart')} Add to Cart</button>`}
         <div style="height:10px"></div>
-        <button class="btn-outline" onclick="shareProduct('${p.id}')">${icon('share')} Share Product</button>
+        <button class="btn-outline" onclick="shareProduct('${p.id}')">${icon('share')} Share</button>
       </div>
     </div>`;
 }
 
 /* ---------- CART ---------- */
 function viewCart(){
-  if (!store.cart.length) return `<div class="back-bar"><a class="back-btn" onclick="go('home')">${icon('back')} Continue Shopping</a></div>
-    <div class="empty">${icon('cart','')}Your cart is empty.<br/><br/><button class="btn-primary" style="max-width:240px;margin:0 auto" onclick="go('categories')">Browse Products</button></div>`;
-  const total = cartTotal();
-  return `<div class="back-bar"><a class="back-btn" onclick="go('home')">${icon('back')} Continue Shopping</a></div>
-    <div class="page-h">Your Cart</div><div class="page-sub">${cartCount()} item${cartCount()!==1?'s':''}</div>
-    ${store.cart.map(item=>{ const p=byId(item.id); if(!p) return ''; return `
-      <div class="cart-item">
-        <div class="cart-thumb">${thumbHTML(p)}</div>
-        <div class="cart-info"><h4>${escapeHtml(p.title)}</h4><div class="m">${[p.age,p.sub].filter(Boolean).join(' · ')}</div>
-          <div class="cart-qc"><div class="qty-ctrl"><button onclick="setQty('${p.id}',${item.qty-1})">−</button><span>${item.qty}</span><button onclick="setQty('${p.id}',${item.qty+1})">+</button></div>
-          <button class="cart-remove" onclick="removeFromCart('${p.id}')">Remove</button></div>
-        </div>
-        <div class="cart-line-price">${money(p.price*item.qty)}</div>
-      </div>`; }).join("")}
-    <div class="summary">
-      <div class="row"><span>Subtotal</span><span>${money(total)}</span></div>
-      <div class="row"><span>Delivery</span><span style="color:var(--ink-soft)">Confirmed on WhatsApp</span></div>
-      <div class="row total"><span>Total</span><span>${money(total)}</span></div>
-    </div>
-    <div class="page-h" style="font-size:20px">Delivery Details</div>
+  if(!store.cart.length) return `<div class="back-bar"><a class="back-btn" onclick="go('home')">${icon('back')} Back</a></div><div class="empty">${icon('cart','')}Cart is empty.<br/><br/><button class="btn-primary" style="max-width:220px;margin:0 auto" onclick="go('categories')">Shop now</button></div>`;
+  const total=cartTotal();
+  return `<div class="back-bar"><a class="back-btn" onclick="go('home')">${icon('back')} Back</a></div>
+    <div class="page-h">Cart</div><div class="page-sub">${cartCount()} item${cartCount()!==1?'s':''}</div>
+    ${store.cart.map(item=>{ const p=byId(item.id); if(!p)return ''; return `<div class="cart-item">
+      <div class="cart-thumb">${thumbHTML(p)}</div>
+      <div class="cart-info"><h4>${escapeHtml(p.title)}</h4><div class="m">${[p.age,p.sub].filter(Boolean).join(' · ')}</div>
+        <div class="cart-qc"><div class="qty-ctrl"><button onclick="setQty('${p.id}',${item.qty-1})">${icon('minus')}</button><span>${item.qty}</span><button onclick="setQty('${p.id}',${item.qty+1})">${icon('plus')}</button></div>
+        <button class="cart-remove" onclick="removeFromCart('${p.id}')">${icon('trash')}</button></div></div>
+      <div class="cart-line-price">${money(p.price*item.qty)}</div></div>`; }).join("")}
+    <div class="summary"><div class="row total"><span>Total</span><span>${money(total)}</span></div></div>
+    <div class="page-h" style="font-size:18px">Your Details</div>
     <div class="form-grid">
-      <div class="field full"><label>Full Name *</label><input id="f_name" placeholder="Your name"/></div>
-      <div class="field full"><label>Mobile Number *</label><input id="f_phone" type="tel" inputmode="numeric" placeholder="10-digit mobile"/></div>
-      <div class="field full"><label>Address *</label><textarea id="f_addr" rows="2" placeholder="House / street / area"></textarea></div>
+      <div class="field full"><label>Name</label><input id="f_name" placeholder="Your name"/></div>
+      <div class="field full"><label>${icon('phone')} Mobile</label><input id="f_phone" type="tel" inputmode="numeric" placeholder="10-digit number"/></div>
+      <div class="field full"><label>${icon('pin')} Address</label><textarea id="f_addr" rows="2" placeholder="House / area"></textarea></div>
       <div class="field"><label>City</label><input id="f_city" value="${CONFIG.city}"/></div>
-      <div class="field"><label>PIN Code</label><input id="f_pin" inputmode="numeric" placeholder="380001"/></div>
-      <div class="field full"><label>Remarks (optional)</label><input id="f_note" placeholder="Colour preference, delivery time, etc."/></div>
+      <div class="field"><label>PIN</label><input id="f_pin" inputmode="numeric" placeholder="380001"/></div>
     </div>
     <div style="height:8px"></div>
-    <button class="btn-primary btn-wa" onclick="placeOrder()">${icon('whatsapp')} Place Order on WhatsApp</button>
-    <div style="font-size:12px;color:var(--ink-soft);text-align:center;margin:10px 0 20px">No online payment. Your order opens in WhatsApp for confirmation.</div>`;
+    <button class="btn-primary btn-wa" onclick="placeOrder()">${icon('whatsapp')} Order on WhatsApp</button>
+    <div style="font-size:12px;color:var(--ink-soft);text-align:center;margin:10px 0 20px">No online payment. Confirm on WhatsApp.</div>`;
 }
 function placeOrder(){
   const g=id=>(document.getElementById(id)||{}).value||"";
-  const name=g("f_name").trim(), phone=g("f_phone").trim(), addr=g("f_addr").trim(), city=g("f_city").trim(), pin=g("f_pin").trim(), note=g("f_note").trim();
+  const name=g("f_name").trim(), phone=g("f_phone").trim(), addr=g("f_addr").trim(), city=g("f_city").trim(), pin=g("f_pin").trim();
   let ok=true;
   [["f_name",name],["f_phone",phone],["f_addr",addr]].forEach(([id,v])=>{ const el=document.getElementById(id); if(!v){el.classList.add("err");ok=false;} else el.classList.remove("err"); });
-  if(!ok){ toast("Please fill name, mobile and address"); return; }
-  if(!/^\d{10}$/.test(phone.replace(/\D/g,'').slice(-10))){ document.getElementById("f_phone").classList.add("err"); toast("Enter a valid 10-digit mobile"); return; }
+  if(!ok){ toast("Fill name, mobile, address"); return; }
+  if(!/^\d{10}$/.test(phone.replace(/\D/g,'').slice(-10))){ document.getElementById("f_phone").classList.add("err"); toast("Enter 10-digit mobile"); return; }
   const total=cartTotal();
-  let msg=`Assalamualaikum.\nI would like to place an order.\n\nCustomer Name: ${name}\nMobile: ${phone}\n\nProducts\n`;
-  store.cart.forEach((it,i)=>{ const p=byId(it.id); if(!p)return; msg+=`${i+1}. ${p.title}\n`; if(p.age) msg+=`   Size: ${p.age}\n`; msg+=`   Qty: ${it.qty}\n   Price: ${money(p.price)}  (Line: ${money(p.price*it.qty)})\n`; });
-  msg+=`\nTotal: ${money(total)}\n\nDelivery Address\n${addr}\n${city}${pin?` - ${pin}`:''}\n`;
-  if(note) msg+=`\nRemarks: ${note}\n`;
-  msg+=`\nPlease confirm availability and delivery.\nThank you.`;
+  let msg=`Assalamualaikum.\nI would like to place an order.\n\nName: ${name}\nMobile: ${phone}\n\nProducts\n`;
+  store.cart.forEach((it,i)=>{ const p=byId(it.id); if(!p)return; msg+=`${i+1}. ${p.title}\n`; if(p.age) msg+=`   Size: ${p.age}\n`; msg+=`   Qty: ${it.qty} x ${money(p.price)} = ${money(p.price*it.qty)}\n`; });
+  msg+=`\nTotal: ${money(total)}\n\nAddress\n${addr}\n${city}${pin?` - ${pin}`:''}\n\nPlease confirm. Thank you.`;
   window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`,"_blank");
   toast("Opening WhatsApp...");
 }
 
-/* ---------- WISHLIST ---------- */
+/* ---------- WISHLIST / SEARCH / WHOLESALE ---------- */
 function viewWishlist(){
   const list=store.wishlist.map(byId).filter(p=>p&&p.active);
   return `<div class="back-bar"><a class="back-btn" onclick="go('home')">${icon('back')} Home</a></div>
-    <div class="page-h">Wishlist</div><div class="page-sub">${list.length} saved item${list.length!==1?'s':''}</div>
-    ${list.length?`<div class="prod-grid">${list.map(productCard).join("")}</div>`:`<div class="empty">${icon('heart','')}No saved products yet.<br/>Tap the heart on any product to save it.</div>`}`;
+    <div class="page-h">Saved</div>
+    ${list.length?`<div class="prod-grid">${list.map(productCard).join("")}</div>`:`<div class="empty">${icon('heart','')}Tap the heart on a product to save it.</div>`}`;
 }
-
-/* ---------- SEARCH ---------- */
 function viewSearch(){
   const list=shopProducts().filter(matchesSearch);
   return `<div class="back-bar"><a class="back-btn" onclick="go('home')">${icon('back')} Home</a></div>
-    <div class="page-h">Search</div><div class="page-sub">Results for "${escapeHtml(store.search)}" · ${list.length} found</div>
-    ${list.length?`<div class="prod-grid">${list.map(productCard).join("")}</div>`:`<div class="empty">${icon('search','')}Nothing matched "${escapeHtml(store.search)}".</div>`}`;
+    <div class="page-h">Search</div><div class="page-sub">"${escapeHtml(store.search)}" · ${list.length}</div>
+    ${list.length?`<div class="prod-grid">${list.map(productCard).join("")}</div>`:`<div class="empty">${icon('search','')}No match.</div>`}`;
 }
-
-/* ---------- WHOLESALE ---------- */
 function viewWholesale(){
   return `<div class="back-bar"><a class="back-btn" onclick="go('home')">${icon('back')} Home</a></div>
     <div class="wholesale-hero"><div class="pattern" style="background-image:${patternURI('#f4efe4')}"></div>
-      <h2>Become a Wholesale Partner</h2><p>Shop owners and resellers: get bulk pricing on rumali, caps, namazi and accessories.</p></div>
+      <h2>Wholesale Partner</h2><p>Bulk pricing for shops and resellers.</p></div>
     <div class="form-grid">
-      <div class="field full"><label>Your Name *</label><input id="w_name" placeholder="Full name"/></div>
-      <div class="field"><label>Shop Name</label><input id="w_shop" placeholder="Shop / firm"/></div>
-      <div class="field"><label>City *</label><input id="w_city" placeholder="City"/></div>
-      <div class="field full"><label>Phone *</label><input id="w_phone" type="tel" inputmode="numeric" placeholder="10-digit mobile"/></div>
-      <div class="field full"><label>Business Type</label><select id="w_type"><option>Retail Shop</option><option>Wholesaler</option><option>Online Reseller</option><option>Boutique</option><option>Other</option></select></div>
-      <div class="field full"><label>Expected Monthly Requirement</label><input id="w_qty" placeholder="e.g. 500 pieces"/></div>
-      <div class="field full"><label>Message</label><textarea id="w_msg" rows="3" placeholder="Which products are you interested in?"></textarea></div>
+      <div class="field full"><label>Name</label><input id="w_name" placeholder="Full name"/></div>
+      <div class="field"><label>Shop</label><input id="w_shop" placeholder="Shop name"/></div>
+      <div class="field"><label>City</label><input id="w_city" placeholder="City"/></div>
+      <div class="field full"><label>${icon('phone')} Phone</label><input id="w_phone" type="tel" inputmode="numeric" placeholder="10-digit"/></div>
+      <div class="field full"><label>Monthly need</label><input id="w_qty" placeholder="e.g. 500 pieces"/></div>
     </div>
     <div style="height:8px"></div>
-    <button class="btn-primary btn-wa" onclick="wholesaleInquiry()">${icon('whatsapp')} Send Inquiry on WhatsApp</button>
-    <div style="height:10px"></div>
-    <button class="btn-outline" onclick="wholesaleEmail()">Send by Email</button>
+    <button class="btn-primary btn-wa" onclick="wholesaleInquiry()">${icon('whatsapp')} Send on WhatsApp</button>
     <div style="height:24px"></div>`;
 }
-function wholesaleMsg(){
+function wholesaleInquiry(){
   const g=id=>(document.getElementById(id)||{}).value||"";
-  const name=g("w_name").trim(),shop=g("w_shop").trim(),city=g("w_city").trim(),phone=g("w_phone").trim(),type=g("w_type"),qty=g("w_qty").trim(),m=g("w_msg").trim();
-  if(!name||!city||!phone){ ["w_name","w_city","w_phone"].forEach(id=>{const el=document.getElementById(id); if(!el.value.trim())el.classList.add("err");}); toast("Please fill name, city and phone"); return null; }
-  return `Assalamualaikum.\nWholesale Partnership Inquiry\n\nName: ${name}\nShop: ${shop||'-'}\nCity: ${city}\nPhone: ${phone}\nBusiness Type: ${type}\nMonthly Requirement: ${qty||'-'}\n\nMessage:\n${m||'-'}\n\nThank you.`;
+  const name=g("w_name").trim(),shop=g("w_shop").trim(),city=g("w_city").trim(),phone=g("w_phone").trim(),qty=g("w_qty").trim();
+  if(!name||!city||!phone){ ["w_name","w_city","w_phone"].forEach(id=>{const el=document.getElementById(id); if(!el.value.trim())el.classList.add("err");}); toast("Fill name, city, phone"); return; }
+  const m=`Assalamualaikum.\nWholesale Inquiry\n\nName: ${name}\nShop: ${shop||'-'}\nCity: ${city}\nPhone: ${phone}\nMonthly need: ${qty||'-'}\n\nThank you.`;
+  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(m)}`,"_blank"); toast("Opening WhatsApp...");
 }
-function wholesaleInquiry(){ const m=wholesaleMsg(); if(!m)return; window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(m)}`,"_blank"); toast("Opening WhatsApp..."); }
-function wholesaleEmail(){ const m=wholesaleMsg(); if(!m)return; window.location.href=`mailto:?subject=${encodeURIComponent('Wholesale Inquiry - '+CONFIG.businessName)}&body=${encodeURIComponent(m)}`; }
+function notifyMe(id){ const p=byId(id); const m=`Assalamualaikum.\nPlease notify me when back in stock:\n${p.title}${p.age?` (${p.age})`:''}\nThank you.`; window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(m)}`,"_blank"); }
+function shareProduct(id){ const p=byId(id); const text=`${p.title} - ${money(p.price)}\nOrder at ${CONFIG.businessName}`; if(navigator.share){ navigator.share({title:p.title,text}).catch(()=>{}); } else { window.open(`https://wa.me/?text=${encodeURIComponent(text)}`,"_blank"); } }
 
-/* ---------- MISC ---------- */
-function notifyMe(id){ const p=byId(id); const m=`Assalamualaikum.\nPlease notify me when this is back in stock:\n\n${p.title}${p.age?` (${p.age})`:''}\n\nThank you.`; window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(m)}`,"_blank"); }
-function shareProduct(id){ const p=byId(id); const text=`${p.title} - ${money(p.price)}\n${p.desc||''}\n\nOrder at ${CONFIG.businessName}`; if(navigator.share){ navigator.share({title:p.title,text}).catch(()=>{}); } else { window.open(`https://wa.me/?text=${encodeURIComponent(text)}`,"_blank"); } }
-
-/* =========================================================
-   ADMIN
-   ========================================================= */
-function openAdmin(){ store.view="admin"; store.admin.editing=null; location.hash="#admin"; window.scrollTo(0,0); render(); }
+/* ============ ADMIN ============ */
+function openAdmin(){ store.view="admin"; store.admin.form=null; store.admin.catAdding=false; location.hash="#admin"; window.scrollTo(0,0); render(); }
 function viewAdmin(){
-  if (!store.admin.pass) return adminLogin();
-  const all = [...store.products];
-  const live = all.filter(p=>p.active).length;
-  const oos = all.filter(p=>p.stock<=0).length;
+  if(!store.admin.pass) return adminLogin();
+  if(store.admin.form) return adminFormView();
+  const all=store.products;
   return `<div class="admin-wrap">
-    <div class="back-bar" style="justify-content:space-between">
-      <a class="back-btn" onclick="go('home')">${icon('back')} Back to Store</a>
-      <button class="back-btn" onclick="adminLogout()">${icon('lock')} Lock</button>
-    </div>
-    <div class="page-h">Store Admin</div>
-    <div class="page-sub">Add, edit or remove products. Changes go live for all customers instantly.</div>
+    <div class="back-bar" style="justify-content:space-between"><a class="back-btn" onclick="go('home')">${icon('back')} Store</a><button class="back-btn" onclick="adminLogout()">${icon('lock')} Lock</button></div>
+    <div class="page-h">Admin</div>
     <div class="admin-stats">
       <div class="stat-card"><div class="n">${all.length}</div><div class="l">Products</div></div>
-      <div class="stat-card"><div class="n">${live}</div><div class="l">Live</div></div>
-      <div class="stat-card"><div class="n">${oos}</div><div class="l">Out of Stock</div></div>
+      <div class="stat-card"><div class="n">${all.filter(p=>p.active).length}</div><div class="l">Live</div></div>
+      <div class="stat-card"><div class="n">${store.categories.length}</div><div class="l">Categories</div></div>
     </div>
-    <button class="btn-primary" onclick="adminForm(null)">${icon('plus')} Add New Product</button>
-    <div style="height:18px"></div>
-    <div class="page-h" style="font-size:18px">All Products</div>
-    <div style="height:8px"></div>
-    ${all.map(adminRow).join("")}
-    <div style="height:30px"></div>
-  </div>`;
+    <div class="admin-tabs">
+      <button class="${store.admin.tab==='products'?'active':''}" onclick="adminTab('products')">${icon('box')} Products</button>
+      <button class="${store.admin.tab==='categories'?'active':''}" onclick="adminTab('categories')">${icon('layers')} Categories</button>
+    </div>
+    ${store.admin.tab==='products'?adminProducts():adminCategories()}
+    <div style="height:30px"></div></div>`;
 }
-function adminRow(p){
-  const stat = p.stock<=0 ? '<span class="pill-stat oos">Out of stock</span>' : (p.active?'<span class="pill-stat live">Live</span>':'<span class="pill-stat hidden">Hidden</span>');
-  return `<div class="admin-row ${p.active?'':'inactive'}">
+function adminTab(t){ store.admin.tab=t; store.admin.catAdding=false; render(); }
+function adminProducts(){
+  const all=store.products;
+  return `<button class="btn-primary" onclick="adminNewProduct()">${icon('plus')} Add Product</button><div style="height:14px"></div>
+    ${all.map(adminProductRow).join("")||`<div class="empty">${icon('box','')}No products yet.</div>`}`;
+}
+function adminProductRow(p){
+  const stat=p.stock<=0?'<span class="pill-stat oos">Out</span>':(p.active?'<span class="pill-stat live">Live</span>':'<span class="pill-stat hidden">Hidden</span>');
+  return `<div class="admin-row ${p.active?'':'off'}">
     <div class="th">${thumbHTML(p)}</div>
-    <div class="meta"><h4>${escapeHtml(p.title)}</h4><p>${catName(p.cat)}${p.age?' · '+p.age:''} · ${money(p.price)} · stock ${p.stock} ${stat}</p></div>
+    <div class="meta"><h4>${escapeHtml(p.title)}</h4><p>${escapeHtml(catName(p.cat))} · ${money(p.price)} · stk ${p.stock} ${stat}</p></div>
     <div class="acts">
-      <button title="Edit" onclick='adminForm(${JSON.stringify(p.id)})'>${icon('grid')}</button>
-      <button class="del" title="Delete" onclick='adminDelete(${JSON.stringify(p.id)},${JSON.stringify(p.title)})'>${icon('trash')}</button>
-    </div>
-  </div>`;
+      <button title="Edit" onclick='adminEditProduct("${p.id}")'>${icon('pencil')}</button>
+      <button class="del" title="Delete" onclick='adminDeleteProduct("${p.id}",${JSON.stringify(p.title)})'>${icon('trash')}</button>
+    </div></div>`;
 }
+function adminCategories(){
+  return `${store.admin.catAdding?adminCatAddForm():`<button class="btn-primary" onclick="adminCatAddStart()">${icon('plus')} Add Category</button>`}
+    <div style="height:14px"></div>
+    ${store.categories.map(c=>{
+      const cnt=store.products.filter(p=>p.cat===c.id).length;
+      return `<div class="cat-manage-row">
+        <div class="ci">${icon(c.icon)}</div>
+        <div class="nm">${escapeHtml(c.name)}<div class="cnt">${cnt} product${cnt!==1?'s':''}</div></div>
+        <button class="del" title="Delete" onclick='adminDeleteCategory("${c.id}",${JSON.stringify(c.name)},${cnt})'>${icon('trash')}</button>
+      </div>`;
+    }).join("")||`<div class="empty">${icon('layers','')}No categories.</div>`}`;
+}
+function adminCatAddStart(){ store.admin.catAdding=true; store.admin.newCat={name:"",icon:"box"}; render(); }
+function adminCatAddForm(){
+  const nc=store.admin.newCat;
+  return `<div style="background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:6px">
+    <div class="fld"><label>${icon('tag')} Category name</label>
+      <input class="input" style="width:100%;padding:13px;border:1px solid var(--line-dark);border-radius:10px;font-size:16px" value="${escapeHtml(nc.name)}" oninput="store.admin.newCat.name=this.value" placeholder="e.g. Prayer Mat"/></div>
+    <div class="fld"><label>${icon('spark')} Pick an icon</label>
+      <div class="icon-pick">${ICON_CHOICES.map(ic=>`<button class="${nc.icon===ic?'on':''}" onclick="store.admin.newCat.icon='${ic}';render()">${icon(ic)}</button>`).join("")}</div></div>
+    <div style="display:flex;gap:8px">
+      <button class="btn-primary" style="flex:1" onclick="adminCatSave()">${icon('check')} Save</button>
+      <button class="btn-outline" style="flex:1" onclick="store.admin.catAdding=false;render()">Cancel</button>
+    </div></div>`;
+}
+async function adminCatSave(){
+  const nc=store.admin.newCat;
+  if(!nc.name.trim()){ toast("Enter a name"); return; }
+  try{ await sbRpc("rw_add_category",{ p_passcode:store.admin.pass, p:{ name:nc.name.trim(), icon:nc.icon } });
+    await reloadCategories(); store.admin.catAdding=false; toast("Category added"); render();
+  }catch(e){ toast(adminErr(e)); adminMaybeLogout(e); }
+}
+async function adminDeleteCategory(id, name, cnt){
+  if(cnt>0){ toast(`Move/delete ${cnt} product${cnt!==1?'s':''} first`); return; }
+  if(!confirm(`Delete category "${name}"?`)) return;
+  try{ await sbRpc("rw_delete_category",{ p_passcode:store.admin.pass, p_id:id }); await reloadCategories(); toast("Category deleted"); render(); }
+  catch(e){ toast(/has_products/.test(e.message)?"Category still has products":adminErr(e)); adminMaybeLogout(e); }
+}
+
+/* ----- Admin login ----- */
 function adminLogin(){
-  return `<div class="admin-login">
-    ${icon('lock','')}
-    <h2 style="margin:0 0 4px;font-size:22px">Store Admin</h2>
-    <p style="color:var(--ink-soft);font-size:13px;margin:0 0 18px">Enter the store passcode to manage products.</p>
-    <div class="field" style="text-align:left"><label>Passcode</label><input id="adm_pass" type="password" placeholder="Passcode" onkeydown="if(event.key==='Enter')adminVerify()"/></div>
+  return `<div class="admin-login"><div class="lk">${icon('lock')}</div>
+    <h2 style="font-size:22px">Admin</h2>
+    <p style="color:var(--ink-soft);font-size:13px;margin:4px 0 16px">Enter passcode to manage the store.</p>
+    <div class="field" style="text-align:left"><input id="adm_pass" type="password" placeholder="Passcode" onkeydown="if(event.key==='Enter')adminVerify()"/></div>
     <div style="height:12px"></div>
-    <button class="btn-primary" onclick="adminVerify()">Unlock</button>
+    <button class="btn-primary" onclick="adminVerify()">${icon('check')} Unlock</button>
     <div style="height:10px"></div>
-    <button class="btn-outline btn-sm" style="width:100%" onclick="go('home')">Back to Store</button>
-  </div>`;
+    <button class="btn-outline" onclick="go('home')">Back</button></div>`;
 }
 async function adminVerify(){
   const pass=(document.getElementById("adm_pass")||{}).value||"";
   if(!pass) return;
-  try{
-    const okv = await sbRpc("rw_check_pass",{ p_passcode: pass });
-    if(okv===true){ store.admin.pass=pass; sessionStorage.setItem("rw_pass",pass); toast("Welcome"); render(); }
-    else toast("Wrong passcode");
-  }catch(e){ toast("Could not verify - check connection"); }
+  try{ const ok=await sbRpc("rw_check_pass",{ p_passcode:pass });
+    if(ok===true){ store.admin.pass=pass; sessionStorage.setItem("rw_pass",pass); toast("Welcome"); render(); } else toast("Wrong passcode");
+  }catch(e){ toast("Check connection"); }
 }
 function adminLogout(){ store.admin.pass=null; sessionStorage.removeItem("rw_pass"); go("home"); }
+function adminErr(e){ return /unauthorized/i.test(e.message)?"Session expired - unlock again":"Something went wrong"; }
+function adminMaybeLogout(e){ if(/unauthorized/i.test(e.message)){ store.admin.pass=null; sessionStorage.removeItem("rw_pass"); render(); } }
 
-function adminForm(id){
-  const p = id ? byId(id) : { cat:"rumali", sub:"", age:"", title:"", price:"", mrp:"", fabric:"", colors:[], image:"", badge:"", stars:5, stock:10, desc:"", active:true };
-  store.admin.editing = id;
-  const opt=(v,l,cur)=>`<option value="${v}" ${cur===v?'selected':''}>${l}</option>`;
-  const ageOpts=["",...AGE_KIDS,...AGE_ADULT].map(a=>opt(a,a||'(none)',p.age)).join("");
-  app.innerHTML = `<div class="admin-wrap">
-    <div class="back-bar"><a class="back-btn" onclick="openAdmin()">${icon('back')} Admin</a></div>
-    <div class="page-h">${id?'Edit Product':'Add Product'}</div>
+/* ----- Admin product form (chip-based, India-Recycle style) ----- */
+function blankForm(){ return { id:null, title:"", cat:(store.categories[0]||{}).id||"rumali", sub:"", age:"", fabric:"", price:"", mrp:"", stock:"10", badge:"", colors:[], image:"", desc:"", active:true }; }
+function adminNewProduct(){ store.admin.editing=null; store.admin.form=blankForm(); render(); }
+function adminEditProduct(id){ const p=byId(id); if(!p)return; store.admin.editing=id; store.admin.form={ id:p.id, title:p.title, cat:p.cat, sub:p.sub, age:p.age, fabric:p.fabric, price:String(p.price), mrp:p.mrp?String(p.mrp):"", stock:String(p.stock), badge:p.badge, colors:[...(p.colors||[])], image:p.image, desc:p.desc, active:p.active }; render(); }
+function afSet(k,v){ store.admin.form[k]=v; render(); }
+function afInput(k,v){ store.admin.form[k]=v; }               // text inputs: store without re-render (keep focus)
+function afToggleColor(h){ const f=store.admin.form; const i=f.colors.indexOf(h); if(i>=0) f.colors.splice(i,1); else f.colors.push(h); render(); }
+function adminFormView(){
+  const f=store.admin.form, isNew=!store.admin.editing;
+  const subSuggest=[...new Set(store.products.filter(p=>p.cat===f.cat && p.sub).map(p=>p.sub))];
+  const previewP={ ...f, price:+f.price||0, mrp:+f.mrp||0, stars:5, stock:+f.stock||0, image:f.image };
+  return `<div class="admin-wrap">
+    <div class="back-bar" style="justify-content:space-between"><a class="back-btn" onclick="openAdmin()">${icon('back')} Admin</a>
+      <button class="back-btn" onclick="openAdmin()">${icon('x')} Close</button></div>
+    <div class="page-h">${isNew?'Add Product':'Edit Product'}</div>
+
+    <div class="fld"><label>${icon('image')} Photo (optional)</label>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="photo-tile">${f.image?`<img src="${escapeHtml(f.image)}" onerror="this.style.display='none'"/>`:icon('image')}</div>
+        <input style="flex:1;padding:13px;border:1px solid var(--line-dark);border-radius:10px;font-size:15px" value="${escapeHtml(f.image)}" oninput="afInput('image',this.value)" onchange="render()" placeholder="Paste image link"/>
+      </div></div>
+
+    <div class="fld"><label>${icon('tag')} Product name</label>
+      <input style="width:100%;padding:14px;border:1px solid var(--line-dark);border-radius:10px;font-size:17px;font-weight:600" value="${escapeHtml(f.title)}" oninput="afInput('title',this.value)" onchange="render()" placeholder="e.g. Diamond Net Rumali"/></div>
+
+    <div class="fld"><label>${icon('layers')} Category</label>
+      <div class="chip-wrap">${store.categories.map(c=>`<button class="chip chip-ic ${f.cat===c.id?'on':''}" onclick="afSet('cat','${c.id}')">${icon(c.icon)} ${escapeHtml(c.name)}</button>`).join("")}</div></div>
+
+    <div class="fld"><label>${icon('box')} Type (optional)</label>
+      <input list="subsug" style="width:100%;padding:13px;border:1px solid var(--line-dark);border-radius:10px;font-size:16px" value="${escapeHtml(f.sub)}" oninput="afInput('sub',this.value)" onchange="render()" placeholder="e.g. Diamond Rumali"/>
+      <datalist id="subsug">${subSuggest.map(s=>`<option value="${escapeHtml(s)}">`).join("")}</datalist></div>
+
+    <div class="fld"><label>${icon('rumali')} Size / Age (optional)</label>
+      <div class="chip-wrap">${AGE_ALL.map(a=>`<button class="chip ${f.age===a?'on':''}" onclick="afSet('age', ${JSON.stringify(f.age===a?'':a)})">${a.replace(' Years','')}</button>`).join("")}</div></div>
+
+    <div class="fld"><label>${icon('spark')} Colours</label>
+      <div class="swatch-wrap">${PALETTE.map(c=>`<div class="swatch ${f.colors.includes(c.h)?'on':''}" style="background:${c.h}" title="${c.n}" onclick="afToggleColor('${c.h}')">${f.colors.includes(c.h)?`<span class="tick">${icon('check')}</span>`:''}</div>`).join("")}</div></div>
+
+    <div class="fld"><label>${icon('star')} Badge</label>
+      <div class="toggle-row">
+        <button class="chip ${f.badge===''?'on':''}" onclick="afSet('badge','')">None</button>
+        <button class="chip ${f.badge==='new'?'on':''}" onclick="afSet('badge','new')">New</button>
+        <button class="chip ${f.badge==='best'?'on':''}" onclick="afSet('badge','best')">Top</button>
+      </div></div>
+
     <div class="form-grid">
-      <div class="field full"><label>Title *</label><input id="a_title" value="${escapeHtml(p.title)}" placeholder="e.g. Diamond Net Rumali"/></div>
-      <div class="field"><label>Category *</label><select id="a_cat">${CATEGORIES.filter(c=>c.id!=='wholesale').map(c=>opt(c.id,c.name,p.cat)).join("")}</select></div>
-      <div class="field"><label>Sub-type</label><input id="a_sub" value="${escapeHtml(p.sub)}" placeholder="e.g. Diamond Rumali"/></div>
-      <div class="field"><label>Age / Size</label><select id="a_age">${ageOpts}</select></div>
-      <div class="field"><label>Fabric</label><input id="a_fabric" value="${escapeHtml(p.fabric)}" placeholder="e.g. Soft Cotton"/></div>
-      <div class="field"><label>Price (₹) *</label><input id="a_price" type="number" inputmode="numeric" value="${p.price}" placeholder="120"/></div>
-      <div class="field"><label>MRP (₹)</label><input id="a_mrp" type="number" inputmode="numeric" value="${p.mrp}" placeholder="150"/></div>
-      <div class="field"><label>Stock</label><input id="a_stock" type="number" inputmode="numeric" value="${p.stock}" placeholder="10"/></div>
-      <div class="field"><label>Badge</label><select id="a_badge">${opt('','None',p.badge)}${opt('new','New',p.badge)}${opt('best','Bestseller',p.badge)}</select></div>
-      <div class="field full"><label>Colours (comma-separated hex, e.g. #14352c, #7b241c)</label><input id="a_colors" value="${(p.colors||[]).join(', ')}" placeholder="#14352c, #7b241c"/></div>
-      <div class="field full"><label>Image URL (optional)</label><input id="a_image" value="${escapeHtml(p.image)}" placeholder="https://..."/></div>
-      <div class="field full"><label>Description</label><textarea id="a_desc" rows="3" placeholder="Short product description">${escapeHtml(p.desc)}</textarea></div>
-      <div class="field full"><label class="cb"><input id="a_active" type="checkbox" ${p.active?'checked':''} style="width:auto"/> Visible in store</label></div>
+      <div class="field"><label>${icon('rupee')} Price</label><input inputmode="numeric" value="${escapeHtml(f.price)}" oninput="afInput('price',this.value)" onchange="render()" placeholder="120"/></div>
+      <div class="field"><label>MRP</label><input inputmode="numeric" value="${escapeHtml(f.mrp)}" oninput="afInput('mrp',this.value)" onchange="render()" placeholder="150"/></div>
+      <div class="field"><label>${icon('box')} Stock</label><input inputmode="numeric" value="${escapeHtml(f.stock)}" oninput="afInput('stock',this.value)" onchange="render()" placeholder="10"/></div>
+      <div class="field"><label>Fabric</label><input value="${escapeHtml(f.fabric)}" oninput="afInput('fabric',this.value)" placeholder="Cotton"/></div>
     </div>
+
+    <div class="fld" style="margin-top:6px"><label>Description (optional)</label>
+      <textarea style="width:100%;padding:13px;border:1px solid var(--line-dark);border-radius:10px;font-size:15px;min-height:70px" oninput="afInput('desc',this.value)" placeholder="Short details">${escapeHtml(f.desc)}</textarea></div>
+
+    <div class="fld"><label>${icon('eye')} Show in store</label>
+      <div class="toggle-row">
+        <button class="chip ${f.active?'on':''}" onclick="afSet('active',true)">${icon('check')} Show</button>
+        <button class="chip ${!f.active?'on':''}" onclick="afSet('active',false)">${icon('eyeoff')} Hide</button>
+      </div></div>
+
+    <div class="fld"><label>Preview</label><div class="prod-grid" style="grid-template-columns:1fr"><div style="max-width:180px">${productCardPreview(previewP)}</div></div></div>
+
+    <button class="btn-primary" id="a_save" onclick="adminSaveProduct()">${icon('check')} ${isNew?'Add Product':'Save Changes'}</button>
     <div style="height:10px"></div>
-    <button class="btn-primary" id="a_save" onclick="adminSave()">${icon('check')} ${id?'Save Changes':'Add Product'}</button>
-    <div style="height:10px"></div>
+    ${!isNew?`<button class="btn-primary btn-danger" onclick='adminDeleteProduct("${f.id}",${JSON.stringify(f.title)})'>${icon('trash')} Delete</button><div style="height:10px"></div>`:''}
     <button class="btn-outline" onclick="openAdmin()">Cancel</button>
-    <div style="height:30px"></div>
-  </div>`;
-  window.scrollTo(0,0);
+    <div style="height:30px"></div></div>`;
 }
-async function adminSave(){
-  const g=id=>(document.getElementById(id)||{}).value;
-  const title=g("a_title").trim(), price=g("a_price");
-  if(!title){ document.getElementById("a_title").classList.add("err"); toast("Title is required"); return; }
-  if(price===""||isNaN(+price)){ document.getElementById("a_price").classList.add("err"); toast("Valid price required"); return; }
-  const colors = g("a_colors").split(",").map(s=>s.trim()).filter(Boolean);
-  const data = {
-    category:g("a_cat"), subcategory:g("a_sub").trim(), age:g("a_age"),
-    title, description:g("a_desc").trim(), price:+price, mrp:+(g("a_mrp")||0),
-    fabric:g("a_fabric").trim(), colors, image_url:g("a_image").trim(),
-    badge:g("a_badge"), stock:+(g("a_stock")||0),
-    active: document.getElementById("a_active").checked,
-  };
-  const btn=document.getElementById("a_save"); btn.disabled=true; btn.textContent="Saving...";
+function productCardPreview(p){
+  const off=p.mrp>p.price?Math.round((1-p.price/p.mrp)*100):0;
+  return `<div class="prod-card"><div class="prod-thumb">${thumbHTML(p)}<div class="prod-badges">
+    ${p.badge==='new'?'<span class="badge new">New</span>':''}${p.badge==='best'?'<span class="badge best">Top</span>':''}${off?`<span class="badge off">-${off}%</span>`:''}</div></div>
+    <div class="prod-body"><div class="prod-title">${escapeHtml(p.title||'Product name')}</div>${p.age?`<div class="prod-meta">${p.age}</div>`:''}
+    <div class="prod-price-row"><span class="prod-price">${money(p.price)}</span>${p.mrp>p.price?`<span class="prod-mrp">${money(p.mrp)}</span>`:''}</div></div></div>`;
+}
+async function adminSaveProduct(){
+  const f=store.admin.form;
+  if(!f.title.trim()){ toast("Enter product name"); return; }
+  if(f.price===""||isNaN(+f.price)){ toast("Enter a price"); return; }
+  const data={ category:f.cat, subcategory:(f.sub||"").trim(), age:f.age||"", title:f.title.trim(), description:(f.desc||"").trim(), price:+f.price, mrp:+(f.mrp||0), fabric:(f.fabric||"").trim(), colors:f.colors, image_url:(f.image||"").trim(), badge:f.badge||"", stock:+(f.stock||0), active:!!f.active };
+  const btn=document.getElementById("a_save"); if(btn){ btn.disabled=true; btn.textContent="Saving..."; }
   try{
     if(store.admin.editing) await sbRpc("rw_update_product",{ p_passcode:store.admin.pass, p_id:store.admin.editing, p:data });
     else await sbRpc("rw_add_product",{ p_passcode:store.admin.pass, p:data });
-    await loadProducts();
-    toast(store.admin.editing?"Product updated":"Product added");
-    openAdmin();
-  }catch(e){
-    btn.disabled=false; btn.textContent="Save";
-    toast(/unauthorized/i.test(e.message)?"Session expired - unlock again":"Save failed - try again");
-    if(/unauthorized/i.test(e.message)){ store.admin.pass=null; sessionStorage.removeItem("rw_pass"); render(); }
-  }
+    await reloadProducts(); store.admin.form=null; toast(store.admin.editing?"Saved":"Product added"); render();
+  }catch(e){ if(btn){btn.disabled=false;} toast(adminErr(e)); adminMaybeLogout(e); }
 }
-async function adminDelete(id, title){
-  if(!confirm(`Delete "${title}"? This cannot be undone.`)) return;
-  try{
-    await sbRpc("rw_delete_product",{ p_passcode:store.admin.pass, p_id:id });
-    await loadProducts(); toast("Product deleted"); render();
-  }catch(e){ toast(/unauthorized/i.test(e.message)?"Session expired - unlock again":"Delete failed"); }
+async function adminDeleteProduct(id, title){
+  if(!confirm(`Delete "${title}"?`)) return;
+  try{ await sbRpc("rw_delete_product",{ p_passcode:store.admin.pass, p_id:id }); await reloadProducts(); store.admin.form=null; toast("Deleted"); render(); }
+  catch(e){ toast(adminErr(e)); adminMaybeLogout(e); }
 }
 
-/* =========================================================
-   BADGES / INIT
-   ========================================================= */
+/* ============ CHROME / INIT ============ */
 function updateBadges(){
   const c=cartCount(); const nb=document.getElementById("navCartBadge");
   if(nb){ nb.style.display=c?'grid':'none'; nb.textContent=c; }
   ["Home","Cats","Wish","Cart"].forEach(n=>{ const el=document.getElementById("nav"+n); if(el)el.classList.remove("active"); });
-  const map={home:"Home",categories:"Cats",wishlist:"Wish",cart:"Cart"};
-  const a=map[store.view]; if(a){ const el=document.getElementById("nav"+a); if(el)el.classList.add("active"); }
+  const map={home:"Home",categories:"Cats",wishlist:"Wish",cart:"Cart"}; const a=map[store.view]; if(a){ const el=document.getElementById("nav"+a); if(el)el.classList.add("active"); }
 }
 function paintChrome(){
   document.getElementById("brandMark").innerHTML=icon('moon');
   document.getElementById("searchIcon").innerHTML=icon('search');
   document.querySelectorAll(".bottom-nav button[data-ic]").forEach(b=>{ b.insertAdjacentHTML("afterbegin", icon(b.dataset.ic)); });
-  const wa=document.getElementById("fabWa"); wa.innerHTML=icon('whatsapp'); wa.href=`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent('Assalamualaikum, I have a question about your products.')}`; wa.target="_blank";
+  const wa=document.getElementById("fabWa"); wa.innerHTML=icon('whatsapp'); wa.href=`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent('Assalamualaikum')}`; wa.target="_blank";
   const call=document.getElementById("fabCall"); call.innerHTML=icon('phone'); call.href=`tel:+${CONFIG.callNumber}`;
 }
-async function init(){
-  paintChrome();
-  if(location.hash==="#admin") store.view="admin";
-  render();                 // show skeleton
-  await loadProducts();
-  render();                 // real content
-}
+async function init(){ paintChrome(); if(location.hash==="#admin") store.view="admin"; render(); await loadData(); render(); }
 init();
 </script>
 </body>
