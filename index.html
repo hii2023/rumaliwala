@@ -449,7 +449,7 @@ const WHOLESALE={ id:"wholesale", name:"Wholesale", icon:"box", special:true };
 const AGE_KIDS=["2 Years","3 Years","4 Years","5 Years","6 Years","7 Years","8 Years","9 Years","10 Years","11 Years","12 Years"];
 const AGE_ADULT=["12+ Years","Adult Free Size"];
 const AGE_ALL=["Baby",...AGE_KIDS,...AGE_ADULT];
-const SIZE_CHOICES=["Free Size","S","M","L","XL","XXL","Small","Medium","Large",...AGE_KIDS];
+const SIZE_CHOICES=["Free Size","Adult Free Size","S","M","L","XL","XXL","Baby",...AGE_KIDS,"12+ Years"];
 const SEED=[{id:"s1",cat:"rumali",sub:"Diamond Rumali",age:"6 Years",title:"Diamond Net Rumali",price:120,mrp:150,fabric:"Soft Cotton",colors:["#14352c","#7b241c"],sizes:[],images:[],stars:5,stock:24,desc:""},{id:"s2",cat:"cap",sub:"Prayer Cap",age:"Adult Free Size",title:"Cotton Prayer Cap",price:60,mrp:80,fabric:"Cotton",colors:["#ffffff","#14352c"],sizes:[],images:[],stars:5,stock:50,desc:""}];
 
 /* ============ STATE ============ */
@@ -488,6 +488,8 @@ function homeCats(){ return [...store.categories,WHOLESALE]; }
 const money=n=>CONFIG.currency+Number(n||0).toLocaleString('en-IN');
 const byId=id=>store.products.find(p=>p.id===id);
 function subsFor(cat){ return [...new Set(shopProducts().filter(p=>p.cat===cat&&p.sub).map(p=>p.sub))]; }
+function productSizes(p){ return (p.sizes&&p.sizes.length)?p.sizes:(p.age?[p.age]:[]); }
+function sortSizes(arr){ const ord=s=>{ const m=/(\d+)\s*year/i.exec(s); if(m) return +m[1]; if(/baby/i.test(s)) return 0; if(/free/i.test(s)) return 900; const g={S:101,M:102,L:103,XL:104,XXL:105}; return g[s]||500; }; return [...arr].sort((a,b)=>ord(a)-ord(b)); }
 function toast(msg){ const el=document.getElementById("toast"); el.textContent=msg; el.classList.add("show"); clearTimeout(el._t); el._t=setTimeout(()=>el.classList.remove("show"),2000); }
 function escapeHtml(s){ return String(s==null?"":s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 function sizeLabel(a){ if(!a) return ""; if(LANG==="en") return a; let s=a.replace("Years", LANG==="hi"?"साल":"વર્ષ").replace("Adult Free Size", LANG==="hi"?"फ्री साइज़":"ફ્રી સાઇઝ").replace("Baby", LANG==="hi"?"बेबी":"બેબી"); return s; }
@@ -531,6 +533,9 @@ function render(){
     case "wholesale":html=viewWholesale();break; case "admin":html=viewAdmin();break; default:html=viewHome();
   }
   app.innerHTML=html;
+  const adminMode = store.view==="admin";
+  const fabs=document.querySelector('.fabs'); if(fabs) fabs.style.display=adminMode?'none':'';
+  const lb=document.getElementById('langBtn'); if(lb) lb.style.display=adminMode?'none':'';
   if(LANG!=="en" && pendingTr.size) flushTr();
 }
 
@@ -547,7 +552,7 @@ function productCard(p){
     </div>
     <div class="prod-body">
       <div class="prod-title" onclick="openDetail('${p.id}')">${escapeHtml(P(p.title))}</div>
-      ${p.age?`<div class="prod-meta">${escapeHtml(sizeLabel(p.age))}</div>`:''}
+      ${(()=>{ const ps=productSizes(p); return ps.length?`<div class="prod-meta">${escapeHtml(sizeLabel(ps[0]))}${ps.length>1?' +':''}</div>`:''; })()}
       <div class="prod-price-row"><span class="prod-price">${money(p.price)}</span>${p.mrp>p.price?`<span class="prod-mrp">${money(p.mrp)}</span>`:''}</div>
       ${cardAdd(p)}
     </div></div>`;
@@ -583,14 +588,17 @@ function viewCategory(){ const subs=subsFor(store.filterCat);
     <div class="page-h">${escapeHtml(catName(store.filterCat))}</div><div class="page-sub">${t('choose_type')}</div>
     <div class="sub-list">${subs.map(s=>`<div class="sub-row" onclick='openSub("${store.filterCat}",${JSON.stringify(s)})'><span class="t">${escapeHtml(P(s))}</span>${icon('arrow')}</div>`).join("")}</div>`;
 }
-function openSub(catId,sub){ const rel=shopProducts().filter(p=>p.cat===catId&&p.sub===sub); const ageSet=[...new Set(rel.map(p=>p.age).filter(Boolean))]; const kid=ageSet.filter(a=>/year/i.test(a)&&!/12\+/.test(a)); if(kid.length>1) go("age",{cat:catId,sub,age:null}); else go("products",{cat:catId,sub,age:null}); }
-function viewAge(){ const isWomen=/women/i.test(store.filterSub||""); const list=isWomen?AGE_ADULT:AGE_KIDS.concat(["Adult Free Size"]);
+function openSub(catId,sub){ const rel=shopProducts().filter(p=>p.cat===catId&&p.sub===sub); const sizes=[...new Set(rel.flatMap(productSizes))]; if(sizes.length>1) go("age",{cat:catId,sub,age:null}); else go("products",{cat:catId,sub,age:null}); }
+function viewAge(){
+  const rel=shopProducts().filter(p=>p.cat===store.filterCat && (!store.filterSub||p.sub===store.filterSub));
+  let list=sortSizes([...new Set(rel.flatMap(productSizes))]);
+  if(!list.length){ const isWomen=/women/i.test(store.filterSub||""); list=isWomen?AGE_ADULT:AGE_KIDS.concat(["Adult Free Size"]); }
   return `<div class="back-bar"><a class="back-btn" onclick="go('category',{cat:'${store.filterCat}'})">${icon('back')} ${escapeHtml(catName(store.filterCat))}</a></div>
     <div class="page-h">${escapeHtml(P(store.filterSub)||catName(store.filterCat))}</div><div class="page-sub">${t('choose_size')}</div>
-    <div class="age-grid">${list.map(a=>`<div class="age-card" onclick='go("products",{cat:"${store.filterCat}",sub:${JSON.stringify(store.filterSub||"")},age:${JSON.stringify(a)}})'>${a.replace(' Years','')}<small>${/year/i.test(a)?(LANG==='en'?'yr':sizeLabel('Years')):''}</small></div>`).join("")}</div>
+    <div class="age-grid">${list.map(a=>{ const yr=/(\d+)\s*year/i.exec(a); const main=yr?yr[1]:sizeLabel(a); const sub=yr?(LANG==='en'?'yr':sizeLabel('Years')):''; return `<div class="age-card" onclick='go("products",{cat:"${store.filterCat}",sub:${JSON.stringify(store.filterSub||"")},age:${JSON.stringify(a)}})'>${escapeHtml(main)}<small>${sub}</small></div>`; }).join("")}</div>
     <div style="margin-top:14px"><button class="btn-outline" onclick='go("products",{cat:"${store.filterCat}",sub:${JSON.stringify(store.filterSub||"")},age:null})'>${t('show_all')}</button></div>`;
 }
-function filteredProducts(){ let list=shopProducts().filter(p=>{ if(store.filterCat&&p.cat!==store.filterCat) return false; if(store.filterSub&&p.sub!==store.filterSub) return false; if(store.filterAge&&p.age!==store.filterAge) return false; return true; });
+function filteredProducts(){ let list=shopProducts().filter(p=>{ if(store.filterCat&&p.cat!==store.filterCat) return false; if(store.filterSub&&p.sub!==store.filterSub) return false; if(store.filterAge&&!productSizes(p).includes(store.filterAge)) return false; return true; });
   switch(store.sort){ case "low":list.sort((a,b)=>a.price-b.price);break; case "high":list.sort((a,b)=>b.price-a.price);break; case "popular":list.sort((a,b)=>b.stars-a.stars);break; } return list; }
 function viewProducts(){ const list=filteredProducts(); const backTo=subsFor(store.filterCat).length?`go('category',{cat:'${store.filterCat}'})`:"go('home')";
   return `<div class="back-bar"><a class="back-btn" onclick="${backTo}">${icon('back')} ${t('back')}</a></div>
@@ -603,8 +611,8 @@ function setSort(s){ store.sort=s; render(); }
 
 /* ---------- DETAIL (compact, variant selectors) ---------- */
 let pdSize="", pdColor="", pdImg=0, pdQty=1;
-function openDetail(id){ trackRecent(id); const p=byId(id); pdSize=(p&&p.sizes&&p.sizes[0])||""; pdColor=(p&&p.colors&&p.colors[0])||""; pdImg=0; pdQty=1; store._detailId=id; go("detail"); }
-function viewDetail(){ const p=byId(store._detailId); if(!p) return viewHome(); const oos=p.stock<=0; const imgs=(p.images&&p.images.length)?p.images:(p.image?[p.image]:[]);
+function openDetail(id){ trackRecent(id); const p=byId(id); pdSize=(p&&productSizes(p)[0])||""; pdColor=(p&&p.colors&&p.colors[0])||""; pdImg=0; pdQty=1; store._detailId=id; go("detail"); }
+function viewDetail(){ const p=byId(store._detailId); if(!p) return viewHome(); const oos=p.stock<=0; const imgs=(p.images&&p.images.length)?p.images:(p.image?[p.image]:[]); const ps=productSizes(p);
   const mainImg = imgs.length?`<img src="${escapeHtml(imgs[pdImg]||imgs[0])}" onerror="this.style.display='none'"/>`:`<div class="ph">${icon(catIcon(p.cat),'')}</div>`;
   const inCartQ=cartQtyFor(p.id,pdSize,pdColor);
   return `<div class="back-bar"><a class="back-btn" onclick="go('products',{cat:'${p.cat}'})">${icon('back')} ${escapeHtml(catName(p.cat))}</a></div>
@@ -618,7 +626,7 @@ function viewDetail(){ const p=byId(store._detailId); if(!p) return viewHome(); 
         <h2>${escapeHtml(P(p.title))}</h2>
         <div style="color:var(--gold);font-size:14px">${"★".repeat(p.stars)}${"☆".repeat(5-p.stars)}</div>
         <div class="pd-price-row"><span class="pd-price">${money(p.price)}</span>${p.mrp>p.price?`<span class="prod-mrp" style="font-size:15px">${money(p.mrp)}</span>`:''}<span style="margin-left:auto;font-size:13px;font-weight:600;color:${oos?'var(--danger)':'var(--accent-2)'}">${oos?t('outstock'):t('available')}</span></div>
-        ${(p.sizes&&p.sizes.length)?`<div class="var-lbl">${t('size')}</div><div class="size-chips">${p.sizes.map(s=>`<div class="size-chip ${pdSize===s?'on':''}" onclick="pdSize=${JSON.stringify(s)};render()">${escapeHtml(sizeLabel(s))}</div>`).join("")}</div>`:''}
+        ${ps.length>1?`<div class="var-lbl">${t('size')}</div><div class="size-chips">${ps.map(s=>`<div class="size-chip ${pdSize===s?'on':''}" onclick="pdSize=${JSON.stringify(s)};render()">${escapeHtml(sizeLabel(s))}</div>`).join("")}</div>`:(ps.length===1?`<div class="var-lbl">${t('size')}: <span style="color:var(--ink)">${escapeHtml(sizeLabel(ps[0]))}</span></div>`:'')}
         ${(p.colors&&p.colors.length)?`<div class="var-lbl">${t('colour')}</div><div class="colors">${p.colors.map(c=>`<div class="color-dot ${pdColor===c?'on':''}" style="background:${c}" onclick="pdColor='${c}';render()"></div>`).join("")}</div>`:''}
         ${oos?`<div style="height:12px"></div><button class="btn-primary" onclick="notifyMe('${p.id}')">${icon('bell')} ${t('notify')}</button>`
           :`<div class="qty-row"><span style="font-weight:600">${t('qty')}</span><div class="qty-ctrl"><button onclick="pdQty=Math.max(1,pdQty-1);render()">${icon('minus')}</button><span>${pdQty}</span><button onclick="pdQty++;render()">${icon('plus')}</button></div>${inCartQ?`<span style="font-size:12px;color:var(--ink-soft)">(${inCartQ} ${t('cart')})</span>`:''}</div>
@@ -636,7 +644,7 @@ function viewCart(){
   const total=cartTotal();
   return `<div class="back-bar"><a class="back-btn" onclick="go('home')">${icon('back')} ${t('back')}</a></div>
     <div class="page-h">${t('cart')}</div><div class="page-sub">${cartCount()} ${cartCount()!==1?t('items'):t('item')}</div>
-    ${store.cart.map(it=>{ const p=byId(it.id); if(!p) return ''; const meta=[sizeLabel(it.size||p.age), it.color?`<span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:${it.color};vertical-align:middle;border:1px solid #0002"></span>`:''].filter(Boolean).join(' · ');
+    ${store.cart.map(it=>{ const p=byId(it.id); if(!p) return ''; const meta=[sizeLabel(it.size||productSizes(p)[0]||''), it.color?`<span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:${it.color};vertical-align:middle;border:1px solid #0002"></span>`:''].filter(Boolean).join(' · ');
       return `<div class="cart-item"><div class="cart-thumb">${thumbHTML(p)}</div>
         <div class="cart-info"><h4>${escapeHtml(P(p.title))}</h4><div class="m">${meta}</div>
           <div class="cart-qc"><div class="qty-ctrl"><button onclick='setQtyLine("${p.id}",${JSON.stringify(it.size||"")},${JSON.stringify(it.color||"")},${it.qty-1})'>${icon('minus')}</button><span>${it.qty}</span><button onclick='setQtyLine("${p.id}",${JSON.stringify(it.size||"")},${JSON.stringify(it.color||"")},${it.qty+1})'>${icon('plus')}</button></div>
@@ -662,7 +670,7 @@ function placeOrder(){ const g=id=>(document.getElementById(id)||{}).value||"";
   if(!/^\d{10}$/.test(phone.replace(/\D/g,'').slice(-10))){ document.getElementById("f_phone").classList.add("err"); toast(t('mobile')); return; }
   const total=cartTotal();
   let msg=`Assalamualaikum.\nOrder\n\nName: ${name}\nMobile: ${phone}\n\nProducts\n`;
-  store.cart.forEach((it,i)=>{ const p=byId(it.id); if(!p) return; msg+=`${i+1}. ${p.title}\n`; const sz=it.size||p.age; if(sz) msg+=`   Size: ${sz}\n`; if(it.color){ const nm=(PALETTE.find(c=>c.h.toLowerCase()===it.color.toLowerCase())||{}).n; msg+=`   Colour: ${nm||it.color}\n`; } msg+=`   Qty: ${it.qty} x ${money(p.price)} = ${money(p.price*it.qty)}\n`; });
+  store.cart.forEach((it,i)=>{ const p=byId(it.id); if(!p) return; msg+=`${i+1}. ${p.title}\n`; const sz=it.size||productSizes(p)[0]||''; if(sz) msg+=`   Size: ${sz}\n`; if(it.color){ const nm=(PALETTE.find(c=>c.h.toLowerCase()===it.color.toLowerCase())||{}).n; msg+=`   Colour: ${nm||it.color}\n`; } msg+=`   Qty: ${it.qty} x ${money(p.price)} = ${money(p.price*it.qty)}\n`; });
   msg+=`\nTotal: ${money(total)}\n\nAddress\n${addr}\n${city}${pin?` - ${pin}`:''}\n\nPlease confirm. Thank you.`;
   window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`,"_blank"); toast(t('order_wa'));
 }
@@ -761,15 +769,15 @@ function afRemoveImg(i){ store.admin.form.images.splice(i,1); render(); }
 
 /* ----- Product wizard (step-by-step) ----- */
 function blankForm(){ return { id:null, title:"", cat:(store.categories[0]||{}).id||"rumali", sub:"", age:"", sizes:[], fabric:"", price:"", mrp:"", stock:"10", colors:[], images:[], desc:"", active:true }; }
-function adminNewProduct(){ store.admin.editing=null; store.admin.form=blankForm(); store.admin.step=0; render(); }
-function adminEditProduct(id){ const p=byId(id); if(!p) return; store.admin.editing=id; store.admin.form={ id:p.id, title:p.title, cat:p.cat, sub:p.sub, age:p.age, sizes:[...(p.sizes||[])], fabric:p.fabric, price:String(p.price), mrp:p.mrp?String(p.mrp):"", stock:String(p.stock), colors:[...(p.colors||[])], images:[...(p.images||(p.image?[p.image]:[]))], desc:p.desc, active:p.active }; store.admin.step=0; render(); }
+function adminNewProduct(){ store.admin.editing=null; store.admin.form=blankForm(); store.admin.step=0; render(); pickImages(); }
+function adminEditProduct(id){ const p=byId(id); if(!p) return; store.admin.editing=id; store.admin.form={ id:p.id, title:p.title, cat:p.cat, sub:p.sub, age:p.age, sizes:(p.sizes&&p.sizes.length)?[...p.sizes]:(p.age?[p.age]:[]), fabric:p.fabric, price:String(p.price), mrp:p.mrp?String(p.mrp):"", stock:String(p.stock), colors:[...(p.colors||[])], images:[...(p.images||(p.image?[p.image]:[]))], desc:p.desc, active:p.active }; store.admin.step=0; render(); }
 function afSet(k,v){ store.admin.form[k]=v; render(); }
 function afInput(k,v){ store.admin.form[k]=v; }
 function afToggle(k,v){ const a=store.admin.form[k]; const i=a.indexOf(v); if(i>=0) a.splice(i,1); else a.push(v); render(); }
-function wizStep(d){ const f=store.admin.form; if(d>0){ if(store.admin.step===1 && !f.title.trim()){ toast("Enter product name"); return; } if(store.admin.step===3 && (f.price===""||isNaN(+f.price))){ toast("Enter a price"); return; } } store.admin.step=Math.max(0,Math.min(4,store.admin.step+d)); window.scrollTo(0,0); render(); }
+function wizStep(d){ const f=store.admin.form; if(d>0){ if(store.admin.step===1 && !f.title.trim()){ toast("Enter product name"); return; } if(store.admin.step===2 && (f.price===""||isNaN(+f.price))){ toast("Enter a price"); return; } } store.admin.step=Math.max(0,Math.min(3,store.admin.step+d)); window.scrollTo(0,0); render(); }
 function adminFormView(){ const f=store.admin.form, isNew=!store.admin.editing, step=store.admin.step;
-  const stepsBar=`<div class="wiz-steps">${[0,1,2,3,4].map(i=>`<div class="s ${i<=step?'on':''}"></div>`).join("")}</div>`;
-  const head=`<div class="back-bar" style="justify-content:space-between"><a class="back-btn" onclick="openAdmin()">${icon('back')} Admin</a><button class="back-btn" onclick="openAdmin()">${icon('x')} Close</button></div><div class="page-h">${isNew?'Add Product':'Edit Product'} <span style="font-size:14px;color:var(--ink-soft)">· ${step+1}/5</span></div>${stepsBar}`;
+  const stepsBar=`<div class="wiz-steps">${[0,1,2,3].map(i=>`<div class="s ${i<=step?'on':''}"></div>`).join("")}</div>`;
+  const head=`<div class="back-bar" style="justify-content:space-between"><a class="back-btn" onclick="openAdmin()">${icon('back')} Admin</a><button class="back-btn" onclick="openAdmin()">${icon('x')} Close</button></div><div class="page-h">${isNew?'Add Product':'Edit Product'} <span style="font-size:14px;color:var(--ink-soft)">· ${step+1}/4</span></div>${stepsBar}`;
   let body="";
   if(step===0){ body=`<div class="fld"><label>${icon('camera')} Photos</label>
       <div class="photo-tiles">${f.images.map((u,i)=>`<div class="pt"><img src="${escapeHtml(u)}"/><button class="rm" onclick="afRemoveImg(${i})">${icon('x')}</button></div>`).join("")}
@@ -779,28 +787,27 @@ function adminFormView(){ const f=store.admin.form, isNew=!store.admin.editing, 
     body=`<div class="fld"><label>${icon('tag')} Product name</label><input style="width:100%;padding:14px;border:1px solid var(--line-dark);border-radius:10px;font-size:17px;font-weight:600" value="${escapeHtml(f.title)}" oninput="afInput('title',this.value)" onchange="render()" placeholder="e.g. Diamond Net Rumali"/></div>
       <div class="fld"><label>${icon('layers')} Category</label><div class="chip-wrap">${store.categories.map(c=>`<button class="chip chip-ic ${f.cat===c.id?'on':''}" onclick="afSet('cat','${c.id}')">${icon(c.icon)} ${escapeHtml(c.name)}</button>`).join("")}</div></div>
       <div class="fld"><label>${icon('box')} Type (optional)</label><input list="subsug" style="width:100%;padding:13px;border:1px solid var(--line-dark);border-radius:10px;font-size:16px" value="${escapeHtml(f.sub)}" oninput="afInput('sub',this.value)" onchange="render()" placeholder="e.g. Diamond Rumali"/><datalist id="subsug">${subSuggest.map(s=>`<option value="${escapeHtml(s)}">`).join("")}</datalist></div>
-      <div class="fld"><label>${icon('rumali')} Browse-size (optional)</label><div class="chip-wrap">${AGE_ALL.map(a=>`<button class="chip ${f.age===a?'on':''}" onclick="afSet('age',${JSON.stringify(f.age===a?'':a)})">${a.replace(' Years','')}</button>`).join("")}</div></div>`;
-  } else if(step===2){ body=`<div class="fld"><label>${icon('rumali')} Sizes (buyer can choose)</label><div class="chip-wrap">${SIZE_CHOICES.map(s=>`<button class="chip ${f.sizes.includes(s)?'on':''}" onclick="afToggle('sizes',${JSON.stringify(s)})">${escapeHtml(s.replace(' Years','y'))}</button>`).join("")}</div><p style="font-size:12px;color:var(--ink-soft);margin-top:6px">Leave empty if one size only.</p></div>
+      <div class="fld"><label>${icon('rumali')} Size / Age (choose one or more)</label><div class="chip-wrap">${SIZE_CHOICES.map(s=>`<button class="chip ${f.sizes.includes(s)?'on':''}" onclick="afToggle('sizes',${JSON.stringify(s)})">${escapeHtml(s.replace(' Years','y'))}</button>`).join("")}</div><p style="font-size:12px;color:var(--ink-soft);margin-top:6px">These show as age/size to customers. Pick many, or leave empty for one-size.</p></div>
       <div class="fld"><label>${icon('spark')} Colours</label><div class="swatch-wrap">${PALETTE.map(c=>`<div class="swatch ${f.colors.includes(c.h)?'on':''}" style="background:${c.h}" title="${c.n}" onclick="afToggle('colors','${c.h}')">${f.colors.includes(c.h)?`<span class="tick">${icon('check')}</span>`:''}</div>`).join("")}</div></div>`;
-  } else if(step===3){ body=`<div class="form-grid">
+  } else if(step===2){ body=`<div class="form-grid">
       <div class="field"><label>${icon('rupee')} Price</label><input inputmode="numeric" value="${escapeHtml(f.price)}" oninput="afInput('price',this.value)" placeholder="120"/></div>
       <div class="field"><label>MRP</label><input inputmode="numeric" value="${escapeHtml(f.mrp)}" oninput="afInput('mrp',this.value)" placeholder="150"/></div>
       <div class="field"><label>${icon('box')} Stock</label><input inputmode="numeric" value="${escapeHtml(f.stock)}" oninput="afInput('stock',this.value)" placeholder="10"/></div>
       <div class="field"><label>Fabric</label><input value="${escapeHtml(f.fabric)}" oninput="afInput('fabric',this.value)" placeholder="Cotton"/></div>
       <div class="field full"><label>Description (optional)</label><textarea style="min-height:64px" oninput="afInput('desc',this.value)">${escapeHtml(f.desc)}</textarea></div></div>
       <div class="fld" style="margin-top:12px"><label>${icon('eye')} Show in store</label><div class="toggle-row"><button class="chip ${f.active?'on':''}" onclick="afSet('active',true)">${icon('check')} Show</button><button class="chip ${!f.active?'on':''}" onclick="afSet('active',false)">${icon('eyeoff')} Hide</button></div></div>`;
-  } else { const prev={...f,price:+f.price||0,mrp:+f.mrp||0,stars:5,stock:+f.stock||0}; body=`<div class="fld"><label>${icon('eye')} Preview</label><div style="max-width:180px">${productCardStatic(prev)}</div></div>
+  } else { const prev={...f,price:+f.price||0,mrp:+f.mrp||0,stars:5,stock:+f.stock||0,age:(f.sizes&&f.sizes[0])||""}; body=`<div class="fld"><label>${icon('eye')} Preview</label><div style="max-width:180px">${productCardStatic(prev)}</div></div>
       <p style="font-size:13px;color:var(--ink-soft)">Check everything looks right, then save.</p>`;
   }
-  const nav=`<div class="wiz-nav">${step>0?`<button class="btn-outline" onclick="wizStep(-1)">${icon('back')} Back</button>`:''}${step<4?`<button class="btn-primary" onclick="wizStep(1)">Next ${icon('arrow')}</button>`:`<button class="btn-primary" id="a_save" onclick="adminSaveProduct()">${icon('check')} ${isNew?'Add Product':'Save'}</button>`}</div>`;
-  const delBtn=(!isNew&&step===4)?`<div style="height:10px"></div><button class="btn-primary btn-danger" onclick='adminDeleteProduct("${f.id}",${JSON.stringify(f.title)})'>${icon('trash')} Delete</button>`:'';
+  const nav=`<div class="wiz-nav">${step>0?`<button class="btn-outline" onclick="wizStep(-1)">${icon('back')} Back</button>`:''}${step<3?`<button class="btn-primary" onclick="wizStep(1)">Next ${icon('arrow')}</button>`:`<button class="btn-primary" id="a_save" onclick="adminSaveProduct()">${icon('check')} ${isNew?'Add Product':'Save'}</button>`}</div>`;
+  const delBtn=(!isNew&&step===3)?`<div style="height:10px"></div><button class="btn-primary btn-danger" onclick='adminDeleteProduct("${f.id}",${JSON.stringify(f.title)})'>${icon('trash')} Delete</button>`:'';
   return `<div class="admin-wrap">${head}${body}${nav}${delBtn}<div style="height:30px"></div></div>`;
 }
 function productCardStatic(p){ return `<div class="prod-card"><div class="prod-thumb">${thumbHTML(p)}</div><div class="prod-body"><div class="prod-title">${escapeHtml(p.title||'Product name')}</div>${p.age?`<div class="prod-meta">${p.age}</div>`:''}<div class="prod-price-row"><span class="prod-price">${money(p.price)}</span>${p.mrp>p.price?`<span class="prod-mrp">${money(p.mrp)}</span>`:''}</div></div></div>`; }
 async function adminSaveProduct(){ const f=store.admin.form;
   if(!f.title.trim()){ toast("Enter product name"); store.admin.step=1; render(); return; }
-  if(f.price===""||isNaN(+f.price)){ toast("Enter a price"); store.admin.step=3; render(); return; }
-  const data={ category:f.cat, subcategory:(f.sub||"").trim(), age:f.age||"", title:f.title.trim(), description:(f.desc||"").trim(), price:+f.price, mrp:+(f.mrp||0), fabric:(f.fabric||"").trim(), colors:f.colors, sizes:f.sizes, images:f.images, image_url:f.images[0]||"", stock:+(f.stock||0), active:!!f.active };
+  if(f.price===""||isNaN(+f.price)){ toast("Enter a price"); store.admin.step=2; render(); return; }
+  const data={ category:f.cat, subcategory:(f.sub||"").trim(), age:(f.sizes&&f.sizes[0])||"", title:f.title.trim(), description:(f.desc||"").trim(), price:+f.price, mrp:+(f.mrp||0), fabric:(f.fabric||"").trim(), colors:f.colors, sizes:f.sizes, images:f.images, image_url:f.images[0]||"", stock:+(f.stock||0), active:!!f.active };
   const btn=document.getElementById("a_save"); if(btn){ btn.disabled=true; btn.textContent="Saving..."; }
   try{ if(store.admin.editing) await sbRpc("rw_update_product",{p_passcode:store.admin.pass,p_id:store.admin.editing,p:data}); else await sbRpc("rw_add_product",{p_passcode:store.admin.pass,p:data});
     await reloadProducts(); store.admin.form=null; toast(store.admin.editing?"Saved":"Product added"); render();
@@ -848,7 +855,7 @@ function applyChrome(){
   const wa=document.getElementById("fabWa"); wa.innerHTML=icon('whatsapp'); wa.href=`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent('Assalamualaikum')}`; wa.target="_blank";
   const call=document.getElementById("fabCall"); call.innerHTML=icon('phone'); call.href=`tel:+${CONFIG.callNumber}`;
 }
-async function init(){ document.documentElement.lang=LANG; applyChrome(); if(location.hash==="#admin") store.view="admin"; render(); await loadData(); render(); }
+async function init(){ document.documentElement.lang=LANG; applyChrome(); if(location.hostname.startsWith("admin.")||location.hash==="#admin") store.view="admin"; render(); await loadData(); render(); }
 init();
 </script>
 </body>
